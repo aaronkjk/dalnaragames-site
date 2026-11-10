@@ -133,3 +133,12 @@ section.one{padding-top:18px}
 .more summary::before{content:"+ "}
 .more[open] summary::before{content:"- "}
 @media (max-width:640px){.game{grid-template-columns:60px 1fr auto;gap:12px;padding:12px 14px 12px 12px}.game img,.game .q{width:60px;height:60px}.game .nm{font-size:18px}.game .one{font-size:13.5px}}
+
+/* 첫 화면 맨 위 SNS 버튼 (2026-11-10 대표님: SNS를 제일 위로). 쓰레드 = 나무 판자, 인스타그램 = 바다 돌 */
+.sns{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px!important}
+.sns .plank{margin:3px;font-size:15px;padding:9px 16px 10px}
+.plank.stone{background:#7f8b98;color:#f4f7fa;box-shadow:0 -3px 0 0 #232a33,0 3px 0 0 #232a33,-3px 0 0 0 #232a33,3px 0 0 0 #232a33,inset 0 3px 0 0 #a9b5c0,inset 0 -4px 0 0 #4f5964;
+  text-shadow:2px 0 0 #232a33,-2px 0 0 #232a33,0 2px 0 #232a33,0 -2px 0 #232a33,2px 2px 0 #232a33,-2px 2px 0 #232a33,2px -2px 0 #232a33,-2px -2px 0 #232a33}
+.plank.stone:hover{color:#f4f7fa}
+.plank.stone:active{box-shadow:0 -3px 0 0 #232a33,0 3px 0 0 #232a33,-3px 0 0 0 #232a33,3px 0 0 0 #232a33,inset 0 3px 0 0 #4f5964,inset 0 -1px 0 0 #4f5964}
+.top nav{gap:12px}
