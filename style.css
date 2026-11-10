@@ -4,7 +4,7 @@
   --cream:#f3ead0; --cream-dim:#c9c2a8; --muted:#a9a6c9;
   --ink:#1f2243; --pink:#ff8fa8; --pink-dark:#c24d6a;
   --pixel:'Galmuri11','DungGeunMo',monospace;
-  --serif:'Gowun Batang','Nanum Myeongjo','AppleMyungjo',serif;
+  --serif:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;   /* 2026-11-10: 명조 → 고딕 (말투를 편하게 바꾸면서) */
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -109,3 +109,27 @@ footer .links{margin-bottom:12px;font-size:14px}
 
 /* 한국어는 단어 중간에서 줄이 바뀌지 않게 */
 body{word-break:keep-all;overflow-wrap:anywhere}
+
+/* 게임 목록: 게임이 늘어도 한 줄씩만 늘어남. 자세한 얘기는 게임마다 따로 쪽 (2026-11-10) */
+.games{list-style:none;padding:0;margin:0;display:grid;gap:16px}
+.game{display:grid;grid-template-columns:72px 1fr auto;gap:16px;align-items:center;padding:14px 18px 14px 14px;text-decoration:none;color:var(--ink);background-image:none}
+a.game:hover{color:var(--ink);filter:brightness(1.04)}
+a.game:active{transform:translateY(2px)}
+.game img,.game .q{width:72px;height:72px;box-shadow:0 0 0 3px var(--ink)}
+.game .q{display:flex;align-items:center;justify-content:center;background:#d9c99b;font-family:var(--pixel);font-weight:700;font-size:30px;color:#8f7f55}
+.game .st,.game .nm,.game .one{display:block}
+.game .st{font-family:var(--pixel);font-weight:700;font-size:11.5px;color:var(--pink-dark);line-height:1.5}
+.game .nm{font-family:var(--pixel);font-weight:700;font-size:20px;line-height:1.35}
+.game .one{font-size:14.5px;color:#5b5d7d;line-height:1.5;margin-top:2px}
+.game .go{font-family:var(--pixel);font-weight:700;font-size:20px;color:var(--pink-dark)}
+.back{font-family:var(--pixel);font-weight:700;font-size:14px;margin:14px 0 0}
+.back a{text-decoration:none;color:var(--muted)}
+.back a:hover{color:var(--cream)}
+section.one{padding-top:18px}
+.soonline{font-size:14px;color:#5b5d7d;margin:22px 0 0!important}
+.more{margin-top:6px}
+.more summary{font-family:var(--pixel);font-weight:700;font-size:13px;color:var(--muted);cursor:pointer;padding:10px 0;list-style:none}
+.more summary::-webkit-details-marker{display:none}
+.more summary::before{content:"+ "}
+.more[open] summary::before{content:"- "}
+@media (max-width:640px){.game{grid-template-columns:60px 1fr auto;gap:12px;padding:12px 14px 12px 12px}.game img,.game .q{width:60px;height:60px}.game .nm{font-size:18px}.game .one{font-size:13.5px}}
