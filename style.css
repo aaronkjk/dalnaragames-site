@@ -147,6 +147,6 @@ section.one{padding-top:18px}
 @font-face{font-family:'SongMyung Logo';font-display:swap;src:url(assets/fonts/SongMyung-logo.woff2) format('woff2')}
 .top .mark{gap:9px;font-family:'SongMyung Logo',var(--serif);font-weight:400;font-size:20px;letter-spacing:.04em;line-height:1.2;color:#f1ead8;white-space:nowrap;flex:none}
 .top .mark img{flex:none}
-.top .mark .ink{width:36px;height:35px}
-.top .mark .nak{width:15px;height:15px;margin-left:-4px;position:relative;top:3px}
-@media (max-width:400px){.top .mark{font-size:17px;letter-spacing:.02em;gap:7px}.top .mark .ink{width:29px;height:28px}.top .mark .nak{width:13px;height:13px;margin-left:-3px}}
+.top .mark .tile{width:36px;height:36px;border-radius:5px}
+
+@media (max-width:400px){.top .mark{font-size:17px;letter-spacing:.02em;gap:7px}.top .mark .tile{width:30px;height:30px}}
