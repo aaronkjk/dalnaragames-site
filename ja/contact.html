@@ -64,7 +64,7 @@
   </article>
 <script>
 (function () {
-  var N = {"aquarium": "あと一匹だけ", "stoneskip": "ぽんぽん水切り", "chicken": "階段の伝説", "house": "雑鬼退散", "wordsort": "낱말 서랍", "nonogram": "カンカンお絵かき", "colorsort": "ゼリーパレット"}, T = {"line": "「{g}」についてのお問い合わせ", "subj": "[{g}] お問い合わせ", "subj0": "Dalnara Gamesへのお問い合わせ", "body": "ゲーム：{g}\nスマホの機種：\nなにがあったか：\n\n（画面の写真があれば、いっしょに添付してください）\n", "body0": "ゲーム：\nスマホの機種：\nなにがあったか：\n\n（画面の写真があれば、いっしょに添付してください）\n"};
+  var N = {"aquarium": "あと一匹だけ", "stoneskip": "ぽんぽん水切り", "chicken": "階段の伝説", "house": "悪霊退散", "wordsort": "낱말 서랍", "nonogram": "カンカンお絵かき", "colorsort": "ゼリーパレット"}, T = {"line": "「{g}」についてのお問い合わせ", "subj": "[{g}] お問い合わせ", "subj0": "Dalnara Gamesへのお問い合わせ", "body": "ゲーム：{g}\nスマホの機種：\nなにがあったか：\n\n（画面の写真があれば、いっしょに添付してください）\n", "body0": "ゲーム：\nスマホの機種：\nなにがあったか：\n\n（画面の写真があれば、いっしょに添付してください）\n"};
   var q = new URLSearchParams(location.search);
   var g = String(q.get('game') || '').toLowerCase().replace(/^com\.dalnaragames\./, '');
   if (!/^[a-z0-9_]{1,30}$/.test(g)) g = '';

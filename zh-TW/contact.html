@@ -64,7 +64,7 @@
   </article>
 <script>
 (function () {
-  var N = {"aquarium": "再釣一條就好", "stoneskip": "跳跳打水漂", "chicken": "樓梯傳說", "house": "雜鬼退散", "wordsort": "낱말 서랍", "nonogram": "格子畫", "colorsort": "果凍調色盤"}, T = {"line": "關於《{g}》的問題", "subj": "[{g}] 問題回報", "subj0": "Dalnara Games 問題回報", "body": "遊戲：{g}\n手機型號：\n發生了什麼事：\n\n（有截圖的話，請一起附上）\n", "body0": "遊戲：\n手機型號：\n發生了什麼事：\n\n（有截圖的話，請一起附上）\n"};
+  var N = {"aquarium": "再釣一條就好", "stoneskip": "跳跳打水漂", "chicken": "樓梯傳說", "house": "小鬼退散", "wordsort": "낱말 서랍", "nonogram": "格子畫", "colorsort": "果凍調色盤"}, T = {"line": "關於《{g}》的問題", "subj": "[{g}] 問題回報", "subj0": "Dalnara Games 問題回報", "body": "遊戲：{g}\n手機型號：\n發生了什麼事：\n\n（有截圖的話，請一起附上）\n", "body0": "遊戲：\n手機型號：\n發生了什麼事：\n\n（有截圖的話，請一起附上）\n"};
   var q = new URLSearchParams(location.search);
   var g = String(q.get('game') || '').toLowerCase().replace(/^com\.dalnaragames\./, '');
   if (!/^[a-z0-9_]{1,30}$/.test(g)) g = '';

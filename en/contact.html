@@ -64,7 +64,7 @@
   </article>
 <script>
 (function () {
-  var N = {"aquarium": "Just One More Fish", "stoneskip": "Bouncy Skip", "chicken": "Stair Legend", "house": "Ghosts Be Gone", "wordsort": "낱말 서랍 (Word Drawers)", "nonogram": "Kankan Pixels", "colorsort": "Jelly Palette"}, T = {"line": "About {g}", "subj": "[{g}] Inquiry", "subj0": "Dalnara Games inquiry", "body": "Game: {g}\nPhone model: \nWhat happened: \n\n(If you have a screenshot, please attach it)\n", "body0": "Game: \nPhone model: \nWhat happened: \n\n(If you have a screenshot, please attach it)\n"};
+  var N = {"aquarium": "Just One More Fish", "stoneskip": "Bouncy Skip", "chicken": "Stair Legend", "house": "Ghosts, Begone!", "wordsort": "낱말 서랍 (Word Drawers)", "nonogram": "Kankan Pixels", "colorsort": "Jelly Palette"}, T = {"line": "About {g}", "subj": "[{g}] Inquiry", "subj0": "Dalnara Games inquiry", "body": "Game: {g}\nPhone model: \nWhat happened: \n\n(If you have a screenshot, please attach it)\n", "body0": "Game: \nPhone model: \nWhat happened: \n\n(If you have a screenshot, please attach it)\n"};
   var q = new URLSearchParams(location.search);
   var g = String(q.get('game') || '').toLowerCase().replace(/^com\.dalnaragames\./, '');
   if (!/^[a-z0-9_]{1,30}$/.test(g)) g = '';
