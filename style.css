@@ -143,9 +143,10 @@ section.one{padding-top:18px}
 .plank.stone:active{box-shadow:0 -3px 0 0 #232a33,0 3px 0 0 #232a33,-3px 0 0 0 #232a33,3px 0 0 0 #232a33,inset 0 3px 0 0 #4f5964,inset 0 -1px 0 0 #4f5964}
 .top nav{gap:12px}
 
-/* 맨 위 로고: 붉은 도장 + 로고 글꼴 송명 (2026-11-17 대표님. 도트 토끼는 안 씀). 글꼴 파일은 '달나라 게임즈' 글자만 뽑은 것(SIL OFL 1.1) */
+/* 맨 위 로고: 먹 달토끼 + 로고 글꼴 송명 + 글자 끝 작은 붉은 도장(낙관) (2026-11-17 대표님. 도트 토끼는 안 씀). 글꼴 파일은 '달나라 게임즈' 글자만 뽑은 것(SIL OFL 1.1) */
 @font-face{font-family:'SongMyung Logo';font-display:swap;src:url(assets/fonts/SongMyung-logo.woff2) format('woff2')}
-.top .mark{gap:10px;font-family:'SongMyung Logo',var(--serif);font-weight:400;font-size:20px;letter-spacing:.04em;line-height:1.2;color:#f1ead8}
-.top .mark img{width:32px;height:32px;flex:none}
-.top .mark{white-space:nowrap;flex:none}
-@media (max-width:400px){.top .mark{font-size:18px;letter-spacing:.02em;gap:8px}.top .mark img{width:28px;height:28px}}
+.top .mark{gap:9px;font-family:'SongMyung Logo',var(--serif);font-weight:400;font-size:20px;letter-spacing:.04em;line-height:1.2;color:#f1ead8;white-space:nowrap;flex:none}
+.top .mark img{flex:none}
+.top .mark .ink{width:36px;height:35px}
+.top .mark .nak{width:15px;height:15px;margin-left:-4px;position:relative;top:3px}
+@media (max-width:400px){.top .mark{font-size:17px;letter-spacing:.02em;gap:7px}.top .mark .ink{width:29px;height:28px}.top .mark .nak{width:13px;height:13px;margin-left:-3px}}
