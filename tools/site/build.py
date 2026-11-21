@@ -99,12 +99,20 @@ def ext(href, label, L, cls=''):
     return f'<a{c} href="{E(href)}" target="_blank" rel="noopener">{label}{SVG["ext"]}<span class="vh"> ({t("new.win", L)})</span></a>'
 
 
+def W(s, L):
+    """일본어·중국어 제목·이름: content.BR에 있으면 낱말 경계에서만 줄이 바뀌게(<wbr> + class kw). 없으면 그냥 글"""
+    if L in ('ja', 'zh-TW') and s in BR:
+        return '<span class="kw">' + '<wbr>'.join(E(x) for x in BR[s].split('|')) + '</span>'
+    return E(s)
+
+
 def gname(g, L, tag=True):
-    """게임 이름(낱말 서랍은 외국어 쪽에서도 한국어 이름 그대로 + lang)"""
+    """게임 이름(낱말 서랍은 외국어 쪽에서도 한국어 이름 그대로 + lang). 한 덩어리로(class nmw)"""
     n = g['name'][L]
     if L != 'ko' and g.get('kosolo') and tag:
-        return f'<span lang="ko">{E(n)}</span>'
-    return E(n)
+        return f'<span class="kw" lang="ko">{E(n)}</span>'
+    return W(n, L) if L in ('ja', 'zh-TW') else f'<span class="kw">{E(n)}</span>'
+
 
 
 # ── 머리 ──
@@ -200,7 +208,7 @@ def header(L, key, path):
         for i, (k, v) in enumerate(secs):
             jump = '' if pre else f' data-jump="{k}"'
             num = mark if (mark and i == 0) else f'{i + (0 if mark else 1):02d}'
-            li += f'<li><a href="{pre}#{k}" data-sfx="tick"{jump}><span class="cur" aria-hidden="true">▶</span><span class="mn">{num}</span>{E(v) if not k == "gname" else v}</a></li>'
+            li += f'<li><a href="{pre}#{k}" data-sfx="tick"{jump}><span class="cur" aria-hidden="true">▶</span><span class="mn">{num}</span>{W(v, L)}</a></li>'
         return f'<ol>{li}</ol>'
     top = [('top', t('menu.top', L))] + sec_index(L)
     if key == 'index':
@@ -211,10 +219,10 @@ def header(L, key, path):
                  + f'<p class="gm-g">{t("menu.home", L)}</p>' + ol(top, home))
     else:
         items = ol(top, home)
-    logo_t = '달나라 게임즈' if L == 'ko' else '<span lang="ko">달나라 게임즈</span>'
+    logo_t = f'<span class="lt"{"" if L == "ko" else " lang=\"ko\""}><span>달나라</span> <span>게임즈</span></span>'
     return f'''<a class="skip" href="#main">{t("skip", L)}</a>
 <header class="top"><div class="in">
-  <a class="logo" href="{home}"><img class="lg-l" src="{rel(path, AS + 'logo-ink.webp')}" alt="" width="40" height="40"><img class="lg-d" src="{rel(path, AS + 'logo-light.webp')}" alt="" width="40" height="40"><span>{logo_t}</span><span class="vh"> {t("site", L) if L != "ko" else ""}</span></a>
+  <a class="logo" href="{home}"><img class="lg-l" src="{rel(path, AS + 'logo-ink.webp')}" alt="" width="40" height="40"><img class="lg-d" src="{rel(path, AS + 'logo-light.webp')}" alt="" width="40" height="40">{logo_t}<span class="vh"> {t("site", L) if L != "ko" else ""}</span></a>
   <div class="tools">{snd_btn(L)}{mode_btn(L)}{lang_menu(L, key, path)}<button type="button" class="menu-b" aria-expanded="false" aria-controls="gm" data-sfx="menu">{t("menu", L)}</button></div>
 </div></header>
 <div class="gmenu" id="gm" hidden><div class="gm-in">
@@ -239,7 +247,7 @@ def footer(L, path, bug_here=False):
     big = '달나라 게임즈'
     return f'''<footer class="foot" id="foot">
   <div class="in">
-    <p class="f-h">{t("foot.h", L)}</p>
+    <p class="f-h">{W(t("foot.h", L), L)}</p>
     {sns_keys(L, 'f-sns')}
     <nav class="f-links" aria-label="{t("foot.nav", L)}">{docs}<a class="flink" href="{'' if bug_here else rel(path, PREFIX[L])}#bug">{t("sec.bug", L)}</a></nav>
     <p class="f-biz">{biz}</p>
@@ -266,7 +274,8 @@ def pond(L, path, cls='pond'):
 
 def jump(secs, L):
     a = ''.join(f'<a href="#{k}" data-jump="{k}" data-sfx="tick">{E(v)}</a>' for k, v in secs)
-    return f'<nav class="jump" aria-label="{t("jump.aria", L)}"><div class="jump-in">{a}</div></nav>'
+    return (f'<nav class="jump" aria-label="{t("jump.aria", L)}"><div class="jump-in">{a}</div>'
+            '<span class="jump-more l" aria-hidden="true">‹</span><span class="jump-more r" aria-hidden="true">›</span></nav>')
 
 
 def fact_li(n, label, fmt, count=False):
@@ -297,6 +306,14 @@ def status(g, L, long=True):
     return s
 
 
+def status_h(g, L):
+    s = t('st.' + g['st'], L)
+    out = W(s, L)
+    if L != 'ko' and g.get('kosolo'):
+        out += ' · ' + W(t('ko.only', L), L)
+    return out
+
+
 def pk_card(g, i, L, path):
     return (f'<button type="button" class="pk-card st-{g["st"]}" role="tab" id="pkc-{g["id"]}" aria-controls="pkp-{g["id"]}" '
             f'aria-selected="{"true" if i == 0 else "false"}" data-i="{i}"><img src="{rel(path, "assets/icon-" + g["id"] + ".webp")}" alt="" width="96" height="96" loading="lazy">'
@@ -312,10 +329,10 @@ def pk_panel(g, i, L, path):
     else:
         act = f'<p class="pk-later">{t("pk.later", L)}</p>'
     tail = f'<span class="pk-tail">{E(g["tail"][L])}</span>' if g.get('tail') else ''
-    info = (f'<p class="pk-kind"><span class="no">{g["no"]}</span>{E(g["kind"][L])}</p>'
+    info = (f'<p class="pk-kind"><span class="no">{g["no"]}</span>{W(g["kind"][L], L)}</p>'
             f'<h3 class="pk-name">{gname(g, L)}</h3>{tail}'
             f'<p class="pk-one">{E(g["one"][L])}</p>{facts}'
-            f'<p class="pk-st st-{g["st"]}"><i aria-hidden="true"></i>{status(g, L)}</p>'
+            f'<p class="pk-st st-{g["st"]}"><i aria-hidden="true"></i><span>{status_h(g, L)}</span></p>'
             f'<div class="pk-act">{act}</div>')
     return (f'<article class="pk-panel st-{g["st"]}" role="tabpanel" id="pkp-{g["id"]}" aria-labelledby="pkc-{g["id"]}" data-i="{i}"{"" if i == 0 else " hidden"}>'
             f'{media(g, L, path, first=(i == 0))}<div class="pk-info">{info}</div></article>')
@@ -335,12 +352,12 @@ def log_section(items, L, sid='log', title=None, game=False):
         else:
             dt, x = it
             lis += f'<li class="hs-i"><span class="node" aria-hidden="true"></span><time>{dt}</time><p>{E(x[L])}</p></li>'
-    lis += f'<li class="hs-i now"><span class="node" aria-hidden="true"></span><time>{t("log.now", L)}</time><p>{t("log.now.t", L)}</p></li>'
+    lis += f'<li class="hs-i now"><span class="node" aria-hidden="true"></span><time>{t("log.now", L)}</time><p>{W(t("log.now.t", L), L)}</p></li>'
     return f'''<section class="log" id="{sid}" data-hscroll aria-labelledby="{sid}-h">
   <div class="hs-pin"><div class="in">
-    <div class="sec-h"><h2 id="{sid}-h">{title or t("sec.log", L)}</h2><p class="yr">2026</p></div>
+    <div class="sec-h"><h2 id="{sid}-h">{W(title or t("sec.log", L), L)}</h2><p class="yr">2026</p></div>
     <div class="hs-win"><ol class="hs-track">{lis}</ol></div>
-    <p class="hs-tip">{SVG["swipe"]}{t("log.tip", L)}</p>
+    <p class="hs-tip t-scroll">{SVG["swipe"]}{t("log.tip", L)}</p><p class="hs-tip t-swipe">{SVG["swipe"]}{t("log.swipe", L)}</p>
   </div></div>
 </section>'''
 
@@ -352,7 +369,7 @@ def next_card(gn, ver, items, when):
 
 def next_section(cards, L, sid='next'):
     return f'''<section class="next" id="{sid}" aria-labelledby="{sid}-h"><div class="in">
-  <div class="sec-h"><h2 id="{sid}-h">{t("sec.next", L)}</h2></div>
+  <div class="sec-h"><h2 id="{sid}-h">{W(t("sec.next", L), L)}</h2></div>
   <div class="up-grid">{''.join(cards)}</div>
 </div></section>'''
 
@@ -360,7 +377,7 @@ def next_section(cards, L, sid='next'):
 def fb_card(kind, cls, L):
     k = 'fb.' + kind
     href = 'mailto:' + MAIL + '?subject=' + urllib.parse.quote(t(k + '.subj', L))
-    return (f'<article class="fb {cls}"><h3>{E(t(k + ".t", L))}</h3><p>{E(t(k + ".p", L))}</p>'
+    return (f'<article class="fb {cls}"><h3>{W(t(k + ".t", L), L)}</h3><p>{E(t(k + ".p", L))}</p>'
             f'<div class="fb-row"><a class="seal-btn sm" href="{E(href)}" data-sfx="go">{E(t("fb.write", L))}</a>'
             f'<button type="button" class="copy" data-copy="{MAIL}">{E(t("fb.copy", L))}</button><span class="copy-msg" aria-live="polite"></span></div></article>')
 
@@ -368,7 +385,7 @@ def fb_card(kind, cls, L):
 def bug_section(L, path, game=None):
     q = f'?game={G[game]["pkg"]}&amp;lang={L}' if game else f'?lang={L}'
     return f'''<section class="bug" id="bug" aria-labelledby="bug-h"><div class="in">
-  <div class="sec-h"><h2 id="bug-h">{E(t("fb.h", L))}</h2></div>
+  <div class="sec-h"><h2 id="bug-h">{W(t("fb.h", L), L)}</h2></div>
   <div class="fb-grid">{fb_card('bug', 'b', L)}{fb_card('idea', 'i', L)}</div>
   <p class="fb-mail"><span class="mail-a" data-copy-src>{MAIL}</span></p>
   <div class="fb-more"><a class="flink" href="{rel(path, PREFIX[L] + 'contact.html')}{q}">{E(t("fb.contact", L))}</a><span class="fb-sns">{E(t("fb.sns", L))} {ext(TH, t('sns.th', L), L, 'flink')} {ext(IG, t('sns.ig', L), L, 'flink')}</span></div>
@@ -377,10 +394,10 @@ def bug_section(L, path, game=None):
 
 def yt_section(L, path):
     return f'''<section class="yt" id="yt" aria-labelledby="yt-h"><div class="in">
-  <div class="sec-h"><h2 id="yt-h">{t("sec.yt", L)}</h2></div>
+  <div class="sec-h"><h2 id="yt-h">{W(t("sec.yt", L), L)}</h2></div>
   <div class="tv">{rough_rect(21)}
     <div class="ych"><img src="{rel(path, AS + 'yt-logo.webp')}" alt="" width="56" height="56" loading="lazy"><span><b lang="ko">달나라 게임즈</b><span>@dalnara_games</span></span></div>
-    <div class="yvids"><div class="yempty" role="img" aria-label="{t("yt.empty", L)}"><span class="yplay" aria-hidden="true"></span><span class="yt-e" aria-hidden="true">{t("yt.empty", L)}</span></div></div>
+    <div class="yvids"><div class="yempty" role="img" aria-label="{t("yt.empty", L)}"><span class="yplay" aria-hidden="true"></span><span class="yt-e" aria-hidden="true">{W(t("yt.empty", L), L)}</span></div></div>
   </div>
   <div class="row">{ext(YT_SUB, t("yt.sub", L), L, "seal-btn")}</div>
 </div></section>'''
@@ -389,7 +406,7 @@ def yt_section(L, path):
 def news_section(L, block):
     nl = ''.join(f'<button type="button" data-lang="{l2}" lang="{l2}" aria-pressed="{"true" if l2 == L else "false"}">{LANG_NAME[l2]}</button>' for l2 in LANGS)
     return f'''<section class="news" id="news" aria-labelledby="news-h">
-  <div class="in"><div class="sec-h"><h2 id="news-h">{t("sec.news", L)}</h2></div></div>
+  <div class="in"><div class="sec-h"><h2 id="news-h">{W(t("sec.news", L), L)}</h2></div></div>
   <div class="nlang" role="group" aria-label="{t("news.lang", L)}">{nl}</div>
   <div class="nwrap">
 <!-- news:start -->{block}<!-- news:end -->
@@ -426,10 +443,10 @@ def page_index(L, news_block):
     cards = ''.join(pk_card(g, i, L, path) for i, g in enumerate(GAMES))
     panels = ''.join(pk_panel(g, i, L, path) for i, g in enumerate(GAMES))
     h1aria = '' if L == 'ko' else f' aria-label="{E(t("site", L))} (달나라 게임즈)"'
-    nx = [next_card(E(G['hanmari']['name'][L]), NEXT['hanmari']['ver'], NEXT['hanmari']['items'][L], WHEN_NEXT[L]),
-          next_card(E(G['tongtong']['name'][L]), NEXT['tongtong']['ver'], NEXT['tongtong']['items'][L], WHEN_NEXT[L]),
-          next_card(E(G['delivery']['name'][L]) + ' · ' + E(G['house']['name'][L]), NEXT['delivery']['ver'], NEXT['delivery']['items'][L], WHEN_NEXT[L]),
-          next_card(E(PUZZLE3[L]), NEXT['puzzle']['ver'], NEXT['puzzle']['items'][L], WHEN_TBD[L])]
+    nx = [next_card(gname(G['hanmari'], L), NEXT['hanmari']['ver'], NEXT['hanmari']['items'][L], WHEN_NEXT[L]),
+          next_card(gname(G['tongtong'], L), NEXT['tongtong']['ver'], NEXT['tongtong']['items'][L], WHEN_NEXT[L]),
+          next_card(gname(G['delivery'], L) + ' · ' + gname(G['house'], L), NEXT['delivery']['ver'], NEXT['delivery']['items'][L], WHEN_NEXT[L]),
+          next_card(W(PUZZLE3[L], L), NEXT['puzzle']['ver'], NEXT['puzzle']['items'][L], WHEN_TBD[L])]
     body = f'''<body>
 {loader(L)}{header(L, 'index', path)}
 <main id="main">
@@ -451,7 +468,7 @@ def page_index(L, news_block):
 
 <section class="select" id="games" data-picker aria-labelledby="sel-h">
   <div class="in">
-    <div class="sec-h"><h2 id="sel-h">{t("sec.games", L)}</h2><p class="pk-count"><b data-pk-count>1</b><span>/ {len(GAMES)}</span></p></div>
+    <div class="sec-h"><h2 id="sel-h">{W(t("sec.games", L), L)}</h2><p class="pk-count"><b data-pk-count>1</b><span>/ {len(GAMES)}</span></p></div>
     <div class="pk-stage" tabindex="0" aria-label="{t("pk.aria", L)}">{rough_rect(11)}{panels}</div>
     <div class="pk-bar">
       <button type="button" class="pk-step" data-pk-step="-1" aria-label="{t("pk.prev", L)}">{SVG["prev"]}</button>
@@ -494,18 +511,18 @@ def page_game(gid, L):
     if gid == 'hanmari':
         pts = '<ol class="sea-l">' + ''.join(f'<li class="rv"><span class="sn">{i + 1}</span><b>{E(a)}</b><p>{E(b)}</p></li>' for i, (a, b) in enumerate(plist[L])) + '</ol>'
     else:
-        pts = '<ol class="pt-l">' + ''.join(f'<li class="rv"><span class="sn">{i + 1:02d}</span><div><b>{E(a)}</b><p>{E(b)}</p></div></li>' for i, (a, b) in enumerate(plist[L])) + '</ol>'
+        pts = '<ol class="pt-l">' + ''.join(f'<li class="rv"><span class="sn">{i + 1:02d}</span><div><b>{W(a, L)}</b><p>{E(b)}</p></div></li>' for i, (a, b) in enumerate(plist[L])) + '</ol>'
     fish = ''
     if gid == 'hanmari':
         cards = ''
         for f in FISH:
             fn, rar, sea = f['n'][L], RARITY[L][f['r']], SEAS[L][f['sea']]
             cards += f'''<li class="rv"><button type="button" class="hw r{f["r"]}" aria-pressed="false" aria-label="{E(t("g.flip", L).format(n=fn))}" data-sfx="flip">
-  <span class="hw-in"><span class="hw-f"><span class="rar">{E(rar)}</span><img src="{rel(path, 'assets/fish/' + f['id'] + '.webp')}" alt="" width="480" height="266" loading="lazy"><b>{E(fn)}</b></span>
-  <span class="hw-b"><span class="rar">{E(rar)}</span><b>{E(fn)}</b><span class="kv"><span>{t("g.sea", L)}</span>{E(sea)}</span><span class="kv"><span>{t("g.size", L)}</span>{f["sz"]}</span><span class="d">{E(f["d"][L])}</span></span></span>
+  <span class="hw-in"><span class="hw-f"><span class="rar">{E(rar)}</span><img src="{rel(path, 'assets/fish/' + f['id'] + '.webp')}" alt="" width="480" height="266" loading="lazy"><b>{W(fn, L)}</b></span>
+  <span class="hw-b"><span class="rar">{E(rar)}</span><b>{W(fn, L)}</b><span class="kv"><span>{t("g.sea", L)}</span>{E(sea)}</span><span class="kv"><span>{t("g.size", L)}</span>{f["sz"]}</span><span class="d">{E(f["d"][L])}</span></span></span>
 </button></li>'''
         fish = f'''<section class="fishc" id="fish" aria-labelledby="fish-h"><div class="in">
-  <div class="sec-h"><h2 id="fish-h">{t("g.fish", L)}</h2></div>
+  <div class="sec-h"><h2 id="fish-h">{W(t("g.fish", L), L)}</h2></div>
   <ul class="hw-row">{cards}</ul>
 </div></section>
 
@@ -522,12 +539,12 @@ def page_game(gid, L):
 <section class="gh" id="game" aria-labelledby="hm-h"><div class="in">
   <a class="back" href="{rel(path, PREFIX[L])}#games" data-sfx="tick">{SVG["prev"]}{t("g.back", L)}</a>
   <div class="screen gh-s">{rough_rect(5)}
-    <div class="gh-top"><p class="pk-kind"><span class="no">{g["no"]}</span>{E(g["kind"][L])}</p>
-    <h1 class="gh-n" id="hm-h">{E(nm)}</h1>{tail}</div>
+    <div class="gh-top"><p class="pk-kind"><span class="no">{g["no"]}</span>{W(g["kind"][L], L)}</p>
+    <h1 class="gh-n" id="hm-h">{gname(g, L)}</h1>{tail}</div>
     {media(g, L, path, 'gh-m')}
     <div class="gh-i">
       <ul class="gh-names">{names}</ul>
-      <p class="pk-st st-test"><i aria-hidden="true"></i>{t("st.test", L)}</p>
+      <p class="pk-st st-test"><i aria-hidden="true"></i><span>{W(t("st.test", L), L)}</span></p>
       <ul class="stats">{stats}</ul>
       {koonly}
     </div>
@@ -538,35 +555,35 @@ def page_game(gid, L):
 {jump(sec_game(g, L), L)}
 
 <section class="about" id="about" aria-labelledby="about-h"><div class="in">
-  <div class="sec-h"><h2 id="about-h">{t("g.about", L)}</h2></div>
+  <div class="sec-h"><h2 id="about-h">{W(t("g.about", L), L)}</h2></div>
   <div class="about-t">{about}</div>
 </div></section>
 
 <section class="how" id="how" aria-labelledby="how-h"><div class="in">
-  <div class="sec-h"><h2 id="how-h">{t("g.how", L)}</h2></div>
+  <div class="sec-h"><h2 id="how-h">{W(t("g.how", L), L)}</h2></div>
   <ol class="how-l">{how}</ol>
 </div></section>
 
 <section class="seas" id="points" aria-labelledby="pt-h"><div class="in">
-  <div class="sec-h"><h2 id="pt-h">{E(ptitle[L])}</h2></div>
+  <div class="sec-h"><h2 id="pt-h">{W(ptitle[L], L)}</h2></div>
   {pts}
 </div></section>
 
 {fish}<section class="shots" id="shots" aria-labelledby="sh-h"><div class="in">
-  <div class="sec-h"><h2 id="sh-h">{t("g.shots", L)}</h2></div>
+  <div class="sec-h"><h2 id="sh-h">{W(t("g.shots", L), L)}</h2></div>
   <ul class="sh-row">{shots}</ul>
 </div></section>
 
 {log_section(GLOG[gid], L, 'hlog', t("g.log", L), True)}
 
-{next_section([next_card(E(nm), nk['ver'], nk['items'][L], WHEN_NEXT[L])], L, 'hnext')}
+{next_section([next_card(gname(g, L), nk['ver'], nk['items'][L], WHEN_NEXT[L])], L, 'hnext')}
 
 {bug_section(L, path, gid)}
 
-<section class="nextg"><div class="in">
-  <p class="k">{t("g.nextgame", L)}</p>
-  <a class="nextg-b" href="{rel(path, page_url(L, ng['id']))}" data-sfx="go"><span class="ng">{E(ng["name"][L])}</span><span class="blink" aria-hidden="true">▶</span></a>
-  <a class="seal-btn" href="{rel(path, PREFIX[L])}#games" data-sfx="go">{t("g.toall", L)}</a>
+<section class="nextg" aria-labelledby="ng-h"><div class="in">
+  <h2 class="k" id="ng-h">{W(t("g.nextgame", L), L)}</h2>
+  <a class="nextg-b" href="{rel(path, page_url(L, ng['id']))}" data-sfx="go"><img src="{rel(path, "assets/icon-" + ng["id"] + ".webp")}" alt="" width="96" height="96" loading="lazy"><span class="ng-t"><span class="ng-k">{W(ng["kind"][L], L)}</span><span class="ng">{gname(ng, L)}</span></span><span class="ng-go" aria-hidden="true">▶</span></a>
+  <a class="ink-btn" href="{rel(path, PREFIX[L])}#games" data-sfx="tick">{SVG["prev"]}{W(t("g.toall", L), L)}</a>
 </div></section>
 </main>
 {footer(L, path, True)}{scripts(path)}</body>
@@ -587,7 +604,7 @@ def page_404(L):
 <section class="lost" aria-labelledby="l-h"><div class="in">
   <div class="screen">{rough_rect(9)}
     <p class="lost-c" aria-hidden="true">404</p>
-    <h1 id="l-h">{t("lost.h", L)}</h1>
+    <h1 id="l-h">{W(t("lost.h", L), L)}</h1>
     <p class="lost-p">{t("lost.p", L)}</p>
     {pond(L, path, 'pond small')}
     <a class="seal-btn big" href="{rel(path, PREFIX[L])}" data-sfx="start"><span class="blink" aria-hidden="true">▶</span> {t("lost.home", L)}</a>
@@ -606,6 +623,8 @@ def page_doc(L, key):
     inner = open(os.path.join(HERE, 'docs', L, key + '.html'), encoding='utf-8').read().strip()
     # 본문 속 바깥 링크(구글 방침 등)도 새 창 + ↗ (글은 그대로)
     inner = re.sub(r'<a href="(https?://[^"]+)"([^>]*)>(.*?)</a>', lambda m: f'<a href="{m.group(1)}" target="_blank" rel="noopener"{re.sub(r' (target|rel)="[^"]*"', '', m.group(2))}>{m.group(3)}{SVG["ext"]}<span class="vh"> ({t("new.win", L)})</span></a>', inner, flags=re.S)
+    if L in ('ja', 'zh-TW'):
+        inner = re.sub(r'<(h[12])([^>]*)>([^<]*)</\1>', lambda m: f'<{m.group(1)}{m.group(2)}>{W(html.unescape(m.group(3)), L)}</{m.group(1)}>', inner)
     return doc_wrap(L, key, page_path(L, key), inner, meta['title'], meta['desc'] or meta['title'])
 
 
@@ -695,8 +714,9 @@ def build_fonts(pages):
         o = Options(); o.flavor = 'woff2'; o.layout_features = ['kern', 'liga']; o.hinting = False; o.desubroutinize = True; o.name_IDs = ['*']; o.notdef_outline = True
         ss = Subsetter(o); ss.populate(unicodes=[ord(c) for c in chars if ord(c) in have] + [0x20, 0xA0]); ss.subset(f)
         f.flavor = 'woff2'; f.save(os.path.join(out, name + '.woff2'))
-        # 오빗의 로마자(M·N 모양이 독특함)는 안 쓰고 숫자·기호·한글만 — 로마자는 기기 고정폭 글꼴로
-        rng = ';unicode-range:U+0020-0040,U+005B-0060,U+007B-00BF,U+2000-2BFF,U+3000-303F,U+3130-318F,U+AC00-D7A3,U+FF01-FF20' if name == 'ui' else ''
+        # 오빗은 숫자·몇 가지 기호(% + , - . / :)·화살표·도형·한글만. 로마자(M·N 모양이 독특함)·띄어쓰기·따옴표·&는 기기 산세리프(본문 글꼴, site.css --f-ui)로
+        # (띄어쓰기까지 오빗이 맡으면 영어 'Write  an  email'처럼 낱말 사이가 벌어짐, 2026-11-21)
+        rng = ';unicode-range:U+0025,U+002B-003A,U+00B7,U+00D7,U+2190-21FF,U+2500-25FF,U+3000-303F,U+3130-318F,U+AC00-D7A3,U+FF01-FF20' if name == 'ui' else ''
         css += "@font-face{font-family:'%s';font-weight:400;font-display:swap;src:url(fonts/%s.woff2?v=%s) format('woff2')%s}\n" % (fam, name, VER['v'], rng)
         print(f'  글꼴 {fam}: {os.path.getsize(os.path.join(out, name + ".woff2")) // 1024}KB')
     open(os.path.join(ROOT, AS, 'fonts.css'), 'w', encoding='utf-8').write(css)

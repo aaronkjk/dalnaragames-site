@@ -109,6 +109,20 @@
   btns.forEach(function (b) { b.addEventListener('click', function () { set(cur() === 'dark' ? 'light' : 'dark'); }); });
 })();
 
+/* 머리 줄 로고 글자: 보통은 CSS 규칙(언어와 상관없이 같음). 글자를 아주 크게 키운 폰에서 단추와 겹치면 글자를 숨김 */
+(function () {
+  var logo = document.querySelector('.logo'), lt = logo && logo.querySelector('.lt'), tools = document.querySelector('.top .tools');
+  if (!lt || !tools) return;
+  function fit() {
+    logo.classList.remove('tight');
+    if (getComputedStyle(lt).display === 'none') return;
+    if (lt.getBoundingClientRect().right > tools.getBoundingClientRect().left - 6) logo.classList.add('tight');
+  }
+  fit(); addEventListener('resize', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  if ('ResizeObserver' in window) new ResizeObserver(fit).observe(tools);
+})();
+
 /* 구역 바로 가기 줄 + 메뉴: 지금 보는 구역 표시(둘이 같은 표시를 씀). 누르면 부드럽게 내려감(CSS scroll-behavior + scroll-margin) */
 (function () {
   var bar = document.querySelector('.jump'); if (!bar) return;
@@ -122,13 +136,29 @@
   function mark(k) {
     if (k === cur) return; cur = k;
     all.forEach(function (a) { if (a.getAttribute('data-jump') === k) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
-    var on = k && bar.querySelector('[data-jump="' + k + '"]');
-    if (on && row.scrollWidth > row.clientWidth + 2) {   // 폰: 표시된 탭이 줄 안에 보이게(세로 스크롤은 건드리지 않음)
-      var l = on.offsetLeft - 16, r = on.offsetLeft + on.offsetWidth + 16;
-      if (l < row.scrollLeft) row.scrollTo({ left: l, behavior: 'smooth' });
-      else if (r > row.scrollLeft + row.clientWidth) row.scrollTo({ left: r - row.clientWidth, behavior: 'smooth' });
-    }
+    show(k);
   }
+  // 폰: 표시된 탭이 줄 안에 보이게 옆으로 밀어 줌(세로 스크롤은 건드리지 않음). 끝의 ‹ › 칸(26px)에 가리지 않게 34px 여유
+  function show(k, now) {
+    if (row.scrollWidth <= row.clientWidth + 2) return;
+    var on = k && bar.querySelector('[data-jump="' + k + '"]');
+    if (!on) { if (row.scrollLeft > 0) row.scrollTo({ left: 0, behavior: now ? 'auto' : 'smooth' }); return; }   // 맨 위(아직 구역 전): 줄도 처음으로
+    var x = on.getBoundingClientRect().left - row.getBoundingClientRect().left + row.scrollLeft;
+    var l = x - 34, r = x + on.offsetWidth + 34;
+    var b = now ? 'auto' : 'smooth';
+    if (l < row.scrollLeft) row.scrollTo({ left: Math.max(0, l), behavior: b });
+    else if (r > row.scrollLeft + row.clientWidth) row.scrollTo({ left: r - row.clientWidth, behavior: b });
+  }
+  // 옆에 더 있으면 그쪽 끝에 ‹ › 표시
+  function edges() {
+    var more = row.scrollWidth > row.clientWidth + 2;
+    bar.classList.toggle('more-l', more && row.scrollLeft > 4);
+    bar.classList.toggle('more-r', more && row.scrollLeft + row.clientWidth < row.scrollWidth - 4);
+  }
+  row.addEventListener('scroll', edges, { passive: true });
+  addEventListener('resize', edges);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { edges(); show(cur, true); });
+  edges();
   function spy() {
     raf = 0;
     var line = (parseFloat(getComputedStyle(bar).top) || 61) + bar.offsetHeight + 48, k = null;   // 줄이 붙었을 때의 밑선 기준(줄이 아직 제자리에 있어도 같은 기준)
@@ -400,14 +430,27 @@
   $$('[data-hscroll]').forEach(function (sec) {
     var track = $('.hs-track', sec), win = $('.hs-win', sec) || sec;
     if (!track) return;
+    // 폰·가로로 눕힌 폰은 세로로 4화면 넘게 내려야 하고 그동안 아래가 비어서, 넓고(720 이상) 높은(500 초과) 화면에서만 '내리면 옆으로'
+    var big = window.matchMedia ? matchMedia('(min-width: 720px) and (min-height: 501px)') : { matches: true };
     function measure() {
       var dx = Math.max(0, track.scrollWidth - win.clientWidth);
       sec.style.setProperty('--dx', dx + 'px');
-      sec.classList.toggle('hs-on', sdt && dx > 8);
+      sec.classList.toggle('hs-on', sdt && dx > 8 && big.matches);
+      sec.classList.toggle('hs-x', dx > 8);
     }
     measure();
     if ('ResizeObserver' in window) new ResizeObserver(measure).observe(win); else window.addEventListener('resize', measure);
+    if (big.addEventListener) big.addEventListener('change', measure);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+    // 손가락으로 미는 줄이면 처음 화면에 들어올 때 한 번 살짝 밀었다 돌아와서 옆에 더 있다는 걸 보여 줌
+    onView(win, function (on, e, io) {
+      if (!on || sec.classList.contains('hs-on') || !sec.classList.contains('hs-x') || win.scrollLeft > 0) return;
+      io && io.disconnect();
+      setTimeout(function () {   // 칸 맞춤(snap)이 끌어당기지 않게 잠깐 끔
+        win.style.scrollSnapType = 'none'; win.scrollTo({ left: 72, behavior: 'smooth' });
+        setTimeout(function () { if (win.scrollLeft <= 80) win.scrollTo({ left: 0, behavior: 'smooth' }); setTimeout(function () { win.style.scrollSnapType = ''; }, 500); }, 650);
+      }, 300);
+    }, { threshold: 0.6 });
   });
 
   /* ── 안내 창(지금은 쓰는 곳 없음, data-soon 단추를 달면 같은 창 안에서 알려 줌) ── */
