@@ -1,3 +1,4 @@
+/* 옛 홈페이지(도트) 모양 — 2026-11-19 새 디자인(assets/site/site.css)으로 바뀐 뒤에는 sns/(게시 목록)만 씀. 지우지 말 것 */
 @font-face{font-family:'Galmuri11';font-weight:700;font-display:swap;src:url(assets/fonts/Galmuri11-Bold.woff2) format('woff2')}
 :root{
   --night:#15193d; --night-2:#1d2150;
@@ -159,10 +160,6 @@ section.one{padding-top:18px}
 
 /* ---- 4개 언어 (2026-11-17 대표님 "사이트도 언어 변경 가능하게") ----
    한국어 = 맨 위 폴더, 일본어 /ja/, 번체 중국어 /zh-TW/, 영어 /en/. 자세한 건 CLAUDE.md '언어 구조' */
-/* 도트 글꼴의 일본어·한자: 갈무리11(보통 굵기)에서 쓰는 글자만 뽑은 것(SIL OFL, 이름만 바꿈). 갈무리11 굵은 글꼴에 가나·한자가 없어서 */
-@font-face{font-family:'Dalnara Pixel CJK';font-weight:700;font-display:swap;src:url(assets/fonts/pixel-cjk.woff2) format('woff2');
-  unicode-range:U+3000-303F,U+3040-30FF,U+3400-4DBF,U+4E00-9FFF,U+F900-FAFF,U+FF00-FFEF}
-:root{--pixel:'Galmuri11','Dalnara Pixel CJK','DungGeunMo',monospace}
 html:lang(ja){--serif:-apple-system,BlinkMacSystemFont,'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Noto Sans CJK JP','Yu Gothic UI','Yu Gothic','Meiryo',sans-serif}
 html:lang(zh-TW){--serif:-apple-system,BlinkMacSystemFont,'PingFang TC','Noto Sans TC','Noto Sans CJK TC','Microsoft JhengHei',sans-serif}
 /* 일본어·중국어는 글자 사이에서 줄이 바뀌는 게 정상(keep-all이면 줄이 안 바뀜) */

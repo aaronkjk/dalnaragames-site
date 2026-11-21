@@ -1,15 +1,9 @@
-pixel-cjk.woff2 ("Dalnara Pixel CJK") — 달나라 게임즈 홈페이지 일본어·번체 중국어 쪽의 도트 글꼴 글자
+Copyright 2018 The SongMyung Project Authors
 
-이 파일은 아래 두 글꼴에서 홈페이지에 쓰는 글자만 뽑아 합친 것(Modified Version)이며, 글꼴 이름을 바꿨습니다.
-This file is a subset/merge (Modified Version) of the fonts below, renamed to "Dalnara Pixel CJK".
-It is licensed under the SIL Open Font License, Version 1.1 (full text below). Made with tools/pixel_cjk.py.
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
 
-1) Galmuri11 (Regular) 2.40.3 — https://github.com/quiple/galmuri
-   Copyright (c) 2019–2025 Lee Minseo (quiple@quiple.dev)
-
-2) Fusion Pixel Font 12px Proportional, Traditional Chinese (2026.08.11) — https://github.com/TakWolf/fusion-pixel-font
-   Copyright (c) 2022, TakWolf (https://takwolf.com). Traditional Chinese glyphs based on Cubic 11 (https://github.com/ACh-K/Cubic-11), SIL OFL 1.1.
-   Used only for the few characters Galmuri11 does not have.
 
 -----------------------------------------------------------
 SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
@@ -24,7 +18,7 @@ with others.
 
 The OFL allows the licensed fonts to be used, studied, modified and
 redistributed freely as long as they are not sold by themselves. The
-fonts, including any derivative works, can be bundled, embedded,
+fonts, including any derivative works, can be bundled, embedded, 
 redistributed and/or sold with any software provided that any reserved
 names are not used by derivative works. The fonts and derivatives,
 however, cannot be released under any other type of license. The

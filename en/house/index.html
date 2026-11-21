@@ -1,21 +1,22 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-design="site">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Ghosts, Begone! · Dalnara Games</title>
-<meta name="description" content="Ghosts, Begone! Home Defense is a pixel defense game where you keep ghosts out of a hanok every night with the gods who guard the house. Twenty nights at Zelkova House.">
+<meta name="description" content="Ghosts, Begone!: Keep ghosts out of a hanok. In closed testing on Google Play.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Dalnara Games">
 <meta property="og:title" content="Ghosts, Begone! · Dalnara Games">
-<meta property="og:description" content="Ghosts, Begone! Home Defense is a pixel defense game where you keep ghosts out of a hanok every night with the gods who guard the house. Twenty nights at Zelkova House.">
-<meta property="og:image" content="https://dalnaragames.com/assets/house-night.webp">
+<meta property="og:description" content="Ghosts, Begone!: Keep ghosts out of a hanok. In closed testing on Google Play.">
+<meta property="og:image" content="https://dalnaragames.com/assets/sea.webp">
 <meta property="og:url" content="https://dalnaragames.com/en/house/">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ko_KR">
 <meta property="og:locale:alternate" content="ja_JP">
 <meta property="og:locale:alternate" content="zh_TW">
-<meta name="theme-color" content="#15193d">
+<meta name="theme-color" content="#f3eee3">
+<meta name="color-scheme" content="light">
 <link rel="canonical" href="https://dalnaragames.com/en/house/">
 <link rel="alternate" hreflang="ko" href="https://dalnaragames.com/house/">
 <link rel="alternate" hreflang="ja" href="https://dalnaragames.com/ja/house/">
@@ -23,59 +24,110 @@
 <link rel="alternate" hreflang="en" href="https://dalnaragames.com/en/house/">
 <link rel="alternate" hreflang="zh-HK" href="https://dalnaragames.com/zh-TW/house/">
 <link rel="alternate" hreflang="x-default" href="https://dalnaragames.com/en/house/">
+<script src="../../lang.js?v=f635e1bb"></script>
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="../../assets/favicon-16.png" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="preload" href="../../assets/fonts/Galmuri11-Bold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../../assets/fonts/SongMyung-logo.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../style.css?v=20261118a">
-<script src="../../lang.js?v=20261118a"></script>
+<link rel="preload" href="../../assets/site/fonts/title.woff2?v=f635e1bb" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/site/fonts/ui.woff2?v=f635e1bb" as="font" type="font/woff2" crossorigin>
+<style>@view-transition{navigation:auto}</style>
+<link rel="stylesheet" href="../../assets/site/fonts.css?v=f635e1bb">
+<link rel="stylesheet" href="../../assets/site/site.css?v=f635e1bb">
+<script>window.DN_T={"moon": ["New moon", "Crescent", "First quarter", "Waxing gibbous", "Full moon", "Waning gibbous", "Last quarter", "Waning crescent"], "greet": {"dawn": "Still up before dawn", "morning": "Good morning", "day": "Good afternoon", "evening": "Good evening", "night": "Hello, night owl"}, "copied": "Copied", "picked": "Address selected. Press and hold to copy", "nw": "opens in a new window"};(function(){var d=document.documentElement,m='light';try{if(localStorage.getItem('dn-seen-site'))d.classList.add('seen');if(localStorage.getItem('dn-mode')==='dark')m='dark'}catch(e){}
+d.setAttribute('data-mode',m);var t=document.querySelector('meta[name=theme-color]');if(t)t.setAttribute('content',m==='dark'?'#15161a':'#f3eee3');
+function q(v){if(v)['ready','finished','updateCallbackDone'].forEach(function(k){v[k]&&v[k].catch(function(){})})}
+addEventListener('unhandledrejection',function(e){var r=e.reason;if(r&&r.name==='InvalidStateError'&&/ransition/.test(r.message||''))e.preventDefault()});
+addEventListener('pageswap',function(e){q(e.viewTransition)});
+addEventListener('pagereveal',function(e){q(e.viewTransition);try{var p=JSON.parse(sessionStorage.getItem('dn-vt')||'null');if(p){d.style.setProperty('--vx',p[0]+'%');d.style.setProperty('--vy',p[1]+'%');sessionStorage.removeItem('dn-vt')}}catch(x){}})})()</script>
 </head>
 <body>
-<div class="page">
-  <div class="top">
-    <a class="mark" href="../"><img class="mk" src="../../assets/logo-mark-light.png" alt="" width="40" height="40"><span lang="ko">달나라 게임즈</span></a>
-    <nav aria-label="Menu"><a href="https://www.threads.com/@dalnara_games" rel="noopener">Threads</a><a href="../#game">Games</a><a href="../#log">Log</a><a href="../#letter">Mail</a></nav>
-    <details class="lang"><summary title="Language"><svg class="globe" width="13" height="13" viewBox="0 0 13 13" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M4 0h5v1H4zM2 1h2v1H2zM9 1h2v1H9zM1 2h1v2H1zM11 2h1v2h-1zM0 4h1v5H0zM12 4h1v5h-1zM1 9h1v2H1zM11 9h1v2h-1zM2 11h2v1H2zM9 11h2v1H9zM4 12h5v1H4zM6 1h1v11H6zM1 6h11v1H1zM4 2h1v2H4zM3 4h1v5H3zM4 9h1v2H4zM8 2h1v2H8zM9 4h1v5H9zM8 9h1v2H8z"/></svg><span class="vh">Language: </span>English</summary><ul><li><a href="../../house/" hreflang="ko" lang="ko" data-setlang="ko">한국어</a></li><li><a href="../../ja/house/" hreflang="ja" lang="ja" data-setlang="ja">日本語</a></li><li><a href="../../zh-TW/house/" hreflang="zh-TW" lang="zh-TW" data-setlang="zh-TW">繁體中文</a></li><li><a href="./" hreflang="en" lang="en" data-setlang="en" aria-current="true">English</a></li></ul></details>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="in">
+  <a class="logo" href="../"><img class="lg-l" src="../../assets/site/logo-ink.webp" alt="" width="40" height="40"><img class="lg-d" src="../../assets/site/logo-light.webp" alt="" width="40" height="40"><span><span lang="ko">달나라 게임즈</span></span><span class="vh"> Dalnara Games</span></a>
+  <div class="tools"><button type="button" class="snd" data-sound data-on="Sound on" data-off="Sound off" aria-pressed="false" data-sfx="none"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path class="w1" d="M15.5 9a4 4 0 0 1 0 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="w2" d="M18 6.5a7.5 7.5 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="x" d="M16 9.5l5 5M21 9.5l-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="snd-l">Sound off</span></button><button type="button" class="mode-b" data-mode-toggle aria-pressed="false" data-sfx="none" data-light="Light" data-dark="Dark" data-aria="Screen brightness" aria-label="Screen brightness: Light"><svg class="ico i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></g></svg><svg class="ico i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="currentColor"/></svg><span class="mode-l">Light</span></button><div class="lang"><button type="button" class="lang-b" aria-expanded="false" aria-controls="langm" aria-label="Language: English"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></g></svg><span>EN</span></button><div class="lang-m" id="langm" hidden><a href="../../house/" hreflang="ko" lang="ko" data-setlang="ko">한국어</a><a href="../../ja/house/" hreflang="ja" lang="ja" data-setlang="ja">日本語</a><a href="../../zh-TW/house/" hreflang="zh-TW" lang="zh-TW" data-setlang="zh-TW">繁體中文</a><a href="./" hreflang="en" lang="en" data-setlang="en" aria-current="true">English</a></div></div><button type="button" class="menu-b" aria-expanded="false" aria-controls="gm" data-sfx="menu">Menu</button></div>
+</div></header>
+<div class="gmenu" id="gm" hidden><div class="gm-in">
+  <p class="gm-h"><span>Menu</span><button type="button" class="gm-x" data-sfx="tick">Close</button></p>
+  <nav aria-label="Menu"><p class="gm-g">This page</p><ol><li><a href="#game" data-sfx="tick" data-jump="game"><span class="cur" aria-hidden="true">▶</span><span class="mn">★</span>Ghosts, Begone!</a></li><li><a href="#about" data-sfx="tick" data-jump="about"><span class="cur" aria-hidden="true">▶</span><span class="mn">01</span>About</a></li><li><a href="#how" data-sfx="tick" data-jump="how"><span class="cur" aria-hidden="true">▶</span><span class="mn">02</span>How to play</a></li><li><a href="#points" data-sfx="tick" data-jump="points"><span class="cur" aria-hidden="true">▶</span><span class="mn">03</span>Gods</a></li><li><a href="#shots" data-sfx="tick" data-jump="shots"><span class="cur" aria-hidden="true">▶</span><span class="mn">04</span>Screens</a></li><li><a href="#hlog" data-sfx="tick" data-jump="hlog"><span class="cur" aria-hidden="true">▶</span><span class="mn">05</span>Log</a></li><li><a href="#bug" data-sfx="tick" data-jump="bug"><span class="cur" aria-hidden="true">▶</span><span class="mn">06</span>Bugs &amp; feedback</a></li></ol><p class="gm-g">Home</p><ol><li><a href="../#top" data-sfx="tick"><span class="cur" aria-hidden="true">▶</span><span class="mn">01</span>Top</a></li><li><a href="../#games" data-sfx="tick"><span class="cur" aria-hidden="true">▶</span><span class="mn">02</span>Choose a game</a></li><li><a href="../#log" data-sfx="tick"><span class="cur" aria-hidden="true">▶</span><span class="mn">03</span>Log</a></li><li><a href="../#next" data-sfx="tick"><span class="cur" aria-hidden="true">▶</span><span class="mn">04</span>Next update</a></li><li><a href="../#news" data-sfx="tick"><span class="cur" aria-hidden="true">▶</span><span class="mn">05</span>News</a></li><li><a href="../#yt" data-sfx="tick"><span class="cur" aria-hidden="true">▶</span><span class="mn">06</span>YouTube</a></li><li><a href="../#bug" data-sfx="tick"><span class="cur" aria-hidden="true">▶</span><span class="mn">07</span>Bugs &amp; feedback</a></li></ol></nav>
+  <p class="gm-tip">Use ↑ ↓ and Enter</p>
+</div></div>
+
+<main id="main">
+<section class="gh" id="game" aria-labelledby="hm-h"><div class="in">
+  <a class="back" href="../#games" data-sfx="tick"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Choose a game</a>
+  <div class="screen gh-s"><svg class="frame" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M15 17 L53 20 L90 20 L124 14 L165 16 L203 9 L238 10 L276 15 L311 10 L350 20 L389 9 L426 9 L463 9 L498 19 L536 10 L577 19 L611 20 L650 16 L686 20 L725 21 L763 11 L798 9 L835 8 L873 15 L909 16 L948 11 L990 14 L983 51 L989 87 L993 124 L989 165 L979 202 L984 239 L979 274 L982 315 L982 352 L992 390 L984 425 L986 464 L981 501 L990 539 L980 577 L980 611 L988 651 L984 689 L987 724 L983 760 L980 798 L989 839 L981 872 L993 911 L985 948 L986 991 L948 985 L909 992 L872 986 L838 981 L800 992 L762 990 L723 985 L685 991 L649 985 L614 991 L577 985 L537 989 L500 983 L462 981 L425 993 L390 988 L350 984 L311 983 L277 991 L238 990 L202 989 L164 990 L126 989 L88 986 L53 989 L11 988 L16 949 L7 911 L11 875 L13 838 L16 800 L12 762 L17 726 L12 688 L19 650 L21 614 L14 575 L9 539 L20 500 L17 464 L17 424 L18 388 L16 350 L16 314 L16 277 L7 237 L13 202 L10 164 L16 124 L14 88 L8 50Z" vector-effect="non-scaling-stroke"/><path class="f2" d="M15 17 L53 20 L90 20 L124 14 L165 16 L203 9 L238 10 L276 15 L311 10 L350 20 L389 9 L426 9 L463 9 L498 19 L536 10 L577 19 L611 20 L650 16 L686 20 L725 21 L763 11 L798 9 L835 8 L873 15 L909 16 L948 11 L990 14 L983 51 L989 87 L993 124 L989 165 L979 202 L984 239 L979 274 L982 315 L982 352 L992 390 L984 425 L986 464 L981 501 L990 539 L980 577 L980 611 L988 651 L984 689 L987 724 L983 760 L980 798 L989 839 L981 872 L993 911 L985 948 L986 991 L948 985 L909 992 L872 986 L838 981 L800 992 L762 990 L723 985 L685 991 L649 985 L614 991 L577 985 L537 989 L500 983 L462 981 L425 993 L390 988 L350 984 L311 983 L277 991 L238 990 L202 989 L164 990 L126 989 L88 986 L53 989 L11 988 L16 949 L7 911 L11 875 L13 838 L16 800 L12 762 L17 726 L12 688 L19 650 L21 614 L14 575 L9 539 L20 500 L17 464 L17 424 L18 388 L16 350 L16 314 L16 277 L7 237 L13 202 L10 164 L16 124 L14 88 L8 50Z" vector-effect="non-scaling-stroke" transform="translate(6 5)"/></svg>
+    <div class="gh-top"><p class="pk-kind"><span class="no">04</span>Pixel hanok defense</p>
+    <h1 class="gh-n" id="hm-h">Ghosts, Begone!</h1><p class="gh-tail">Home Defense</p></div>
+    <div class="gh-m"><video muted playsinline loop preload="none" poster="../../assets/loops/house.webp" aria-label="Ghosts, Begone! gameplay"><source src="../../assets/loops/house.mp4" type="video/mp4"></video></div>
+    <div class="gh-i">
+      <ul class="gh-names"><li lang="ko">잡귀야 물러가라</li><li lang="ja">悪霊退散</li><li lang="zh-TW">小鬼退散</li></ul>
+      <p class="pk-st st-test"><i aria-hidden="true"></i>Closed testing on Google Play</p>
+      <ul class="stats"><li><span class="k">House gods</span><b><span data-count="7">7</span></b></li><li><span class="k">Ghosts</span><b><span data-count="10">10</span><small>kinds</small></b></li><li><span class="k">Story</span><b><span data-count="20">20</span><small>nights</small></b></li><li><span class="k">Languages</span><b><span data-count="1">1</span></b></li></ul>
+      <p class="gh-note">For now the game is in Korean only</p>
+    </div>
   </div>
+  <p class="gh-soon">It's in closed testing on Google Play right now. Once it's officially out, I'll put the download link here.</p>
+</div></section>
 
-  <p class="back"><a href="../#game">&lt; All games</a></p>
-  <section class="one">
-    <article class="paper">
-      <p class="meta">No.04 · Closed testing on Google Play</p>
-      <h2>Ghosts, Begone!</h2>
-      <p class="sub">Home Defense · A pixel hanok defense game</p>
-      <p>A family has moved into Zelkova House, a hanok (traditional Korean house) that sat empty for 30 years. Every night, ghosts come in through the front gate, and you keep them out together with the gods who guard the house (gasin).</p>
-      <p>Place a house god on an empty spot in the yard and it chases ghosts away on its own. Each ghost that reaches the main room puts out a candle, and when they’re all out, you lose.</p>
-      <ul class="dots">
-        <li>There are seven house gods. They wake up one by one, from Jowang who guards the kitchen and Munsin who guards the gate to Samsin Halmeoni</li>
-        <li>Ten kinds of ghosts, plus three bosses</li>
-        <li>The story runs for twenty nights, with old customs like the Shoe Thief on Lunar New Year’s night and cracking nuts on the first full moon</li>
-        <li>Grandma has three requests every night</li>
-        <li>There’s a daily “Tonight” where the yard and the rules change every day</li>
-        <li>Clear the sixth night to open Endless Night. The weekly ranking goes by how many waves you hold out</li>
-        <li>Ads only play when you tap a button for them</li>
-        <li>For now the game is in Korean only</li>
-      </ul>
-      <div class="figs">
-        <figure><img src="../../assets/house-night.webp" alt="Night 3, with house gods placed in the hanok yard to stop ghosts" loading="lazy" width="600" height="1067"><figcaption>Night 3</figcaption></figure>
-        <figure><img src="../../assets/house-boss.webp" alt="The fire dog that came to bite the moon on the first full moon" loading="lazy" width="600" height="1067"><figcaption>The fire dog comes on the full moon</figcaption></figure>
-        <figure><img src="../../assets/house-daily.webp" alt="Tonight, which changes every day, with calendar stamps" loading="lazy" width="600" height="1067"><figcaption>Tonight</figcaption></figure>
-      </div>
-      <p class="soonline">It's in closed testing on Google Play right now. Once it's officially out, I'll put the download link here.</p>
-    </article>
-  </section>
-  <hr class="rule">
+<nav class="jump" aria-label="Jump to"><div class="jump-in"><a href="#about" data-jump="about" data-sfx="tick">About</a><a href="#how" data-jump="how" data-sfx="tick">How to play</a><a href="#points" data-jump="points" data-sfx="tick">Gods</a><a href="#shots" data-jump="shots" data-sfx="tick">Screens</a><a href="#hlog" data-jump="hlog" data-sfx="tick">Log</a><a href="#bug" data-jump="bug" data-sfx="tick">Bugs &amp; feedback</a></div></nav>
 
-  <footer>
-    <p class="links"><a href="../privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="../terms.html">Terms of Service</a> &nbsp;·&nbsp; <a href="../contact.html">Contact</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/dalnara_games/" rel="noopener">Instagram</a> &nbsp;·&nbsp; <a href="https://www.threads.com/@dalnara_games" rel="noopener">Threads</a></p>
-    <p>Dalnara Games (<span lang="ko">달나라 게임즈</span>) · Operated by JKCOMMERCE</p>
-    <p>CEO Jae Kyung Kim · Business registration no. 874-32-01793</p>
-    <p>Room 401-328, 4F, 820 Olympic-ro, Gangdong-gu, Seoul, Republic of Korea</p>
-    <p>dalnaragames.official@gmail.com</p>
-    <p style="margin-top:10px">© 2026 Dalnara Games</p>
-  </footer>
-</div>
+<section class="about" id="about" aria-labelledby="about-h"><div class="in">
+  <div class="sec-h"><h2 id="about-h">About</h2></div>
+  <div class="about-t"><p>A family has moved into Zelkova House, a hanok (traditional Korean house) that sat empty for 30 years. Every night, ghosts come in through the front gate, and you keep them out together with the gods who guard the house (gasin).</p><p>Ads only play when you tap a button for them.</p></div>
+</div></section>
+
+<section class="how" id="how" aria-labelledby="how-h"><div class="in">
+  <div class="sec-h"><h2 id="how-h">How to play</h2></div>
+  <ol class="how-l"><li class="rv"><span class="key" aria-hidden="true">1</span><p>Place a house god on an empty spot in the yard</p></li><li class="rv"><span class="key" aria-hidden="true">2</span><p>It chases ghosts away on its own</p></li><li class="rv"><span class="key" aria-hidden="true">3</span><p>A ghost that reaches the main room puts out a candle. When they’re all out, you lose</p></li></ol>
+</div></section>
+
+<section class="seas" id="points" aria-labelledby="pt-h"><div class="in">
+  <div class="sec-h"><h2 id="pt-h">Gods &amp; ghosts</h2></div>
+  <ol class="pt-l"><li class="rv"><span class="sn">01</span><div><b>Seven house gods</b><p>From Jowang who guards the kitchen and Munsin who guards the gate to Samsin Halmeoni, they wake one by one</p></div></li><li class="rv"><span class="sn">02</span><div><b>Ten kinds of ghosts</b><p>Plus three bosses</p></div></li><li class="rv"><span class="sn">03</span><div><b>Twenty nights of story</b><p>With old customs like the Shoe Thief on Lunar New Year’s night and cracking nuts on the first full moon</p></div></li><li class="rv"><span class="sn">04</span><div><b>Grandma’s requests</b><p>Three every night</p></div></li><li class="rv"><span class="sn">05</span><div><b>Tonight</b><p>The yard and the rules change every day</p></div></li><li class="rv"><span class="sn">06</span><div><b>Endless Night</b><p>Opens after the sixth night. The weekly ranking goes by how many waves you hold out</p></div></li></ol>
+</div></section>
+
+<section class="shots" id="shots" aria-labelledby="sh-h"><div class="in">
+  <div class="sec-h"><h2 id="sh-h">Screens</h2></div>
+  <ul class="sh-row"><li><figure><img src="../../assets/house-night.webp" alt="Night 3, with house gods placed in the hanok yard to stop ghosts" width="600" height="1040" loading="lazy" decoding="async"><figcaption>Night 3</figcaption></figure></li><li><figure><img src="../../assets/house-boss.webp" alt="The fire dog that came to bite the moon on the first full moon" width="600" height="1040" loading="lazy" decoding="async"><figcaption>The fire dog comes on the full moon</figcaption></figure></li><li><figure><img src="../../assets/house-daily.webp" alt="Tonight, which changes every day, with calendar stamps" width="600" height="1040" loading="lazy" decoding="async"><figcaption>Tonight</figcaption></figure></li></ul>
+</div></section>
+
+<section class="log" id="hlog" data-hscroll aria-labelledby="hlog-h">
+  <div class="hs-pin"><div class="in">
+    <div class="sec-h"><h2 id="hlog-h">Update log</h2><p class="yr">2026</p></div>
+    <div class="hs-win"><ol class="hs-track"><li class="hs-i"><span class="node" aria-hidden="true"></span><time>11.15</time><b>Closed testing began</b><p>1.0.0</p></li><li class="hs-i"><span class="node" aria-hidden="true"></span><time>11.16</time><b>1.0.1</b><p>Ads &amp; purchases</p></li><li class="hs-i now"><span class="node" aria-hidden="true"></span><time>Now</time><p>Working on the next update</p></li></ol></div>
+    <p class="hs-tip"><svg viewBox="0 0 30 14" aria-hidden="true"><path d="M2 7h24M20 2l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Scroll down to move along</p>
+  </div></div>
+</section>
+
+<section class="next" id="hnext" aria-labelledby="hnext-h"><div class="in">
+  <div class="sec-h"><h2 id="hnext-h">Next update</h2></div>
+  <div class="up-grid"><article class="up rv"><p class="up-w">Next</p><h3>Ghosts, Begone!</h3><p class="up-v">1.0.2</p><ul><li>Japanese, Traditional Chinese, English</li></ul></article></div>
+</div></section>
+
+<section class="bug" id="bug" aria-labelledby="bug-h"><div class="in">
+  <div class="sec-h"><h2 id="bug-h">Bugs &amp; feedback</h2></div>
+  <div class="fb-grid"><article class="fb b"><h3>Report a bug</h3><p>Spotted something odd? Let me know.</p><div class="fb-row"><a class="seal-btn sm" href="mailto:dalnaragames.official@gmail.com?subject=%5BBug%5D%20" data-sfx="go">Write an email</a><button type="button" class="copy" data-copy="dalnaragames.official@gmail.com">Copy address</button><span class="copy-msg" aria-live="polite"></span></div></article><article class="fb i"><h3>Game feedback</h3><p>Tell me what you want, what was fun and what fell short.</p><div class="fb-row"><a class="seal-btn sm" href="mailto:dalnaragames.official@gmail.com?subject=%5BFeedback%5D%20" data-sfx="go">Write an email</a><button type="button" class="copy" data-copy="dalnaragames.official@gmail.com">Copy address</button><span class="copy-msg" aria-live="polite"></span></div></article></div>
+  <p class="fb-mail"><span class="mail-a" data-copy-src>dalnaragames.official@gmail.com</span></p>
+  <div class="fb-more"><a class="flink" href="../contact.html?game=house&amp;lang=en">Contact about a specific game</a><span class="fb-sns">Comments on social media work too. <a class="flink" href="https://www.threads.com/@dalnara_games" target="_blank" rel="noopener">Threads<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5l-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="vh"> (opens in a new window)</span></a> <a class="flink" href="https://www.instagram.com/dalnara_games/" target="_blank" rel="noopener">Instagram<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5l-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="vh"> (opens in a new window)</span></a></span></div>
+</div></section>
+
+<section class="nextg"><div class="in">
+  <p class="k">Next game</p>
+  <a class="nextg-b" href="../hanmari/" data-sfx="go"><span class="ng">Just One More Fish</span><span class="blink" aria-hidden="true">▶</span></a>
+  <a class="seal-btn" href="../#games" data-sfx="go">Back to all games</a>
+</div></section>
+</main>
+<footer class="foot" id="foot">
+  <div class="in">
+    <p class="f-h">I post the making-of on social media (in Korean)</p>
+    <nav class="f-sns" aria-label="Social"><a class="sk" href="https://www.threads.com/@dalnara_games" target="_blank" rel="noopener" data-sfx="go"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v10H11l-4.5 4v-4H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 9.5h8M8 12.3h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="sn">Threads<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5l-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="vh"> (opens in a new window)</span></a><a class="sk" href="https://www.instagram.com/dalnara_games/" target="_blank" rel="noopener" data-sfx="go"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 8h4l1.6-2.5h5.8L16.5 8h4v11h-17z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="13.2" r="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span class="sn">Instagram<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5l-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="vh"> (opens in a new window)</span></a><a class="sk" href="https://www.youtube.com/@dalnara_games" target="_blank" rel="noopener" data-sfx="go"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12.5" rx="1" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 8.3v5l4.3-2.5z" fill="currentColor"/><path d="M8 20h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="sn">YouTube<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5l-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="vh"> (opens in a new window)</span></a></nav>
+    <nav class="f-links" aria-label="Info"><a class="flink" href="../privacy.html">Privacy Policy</a><a class="flink" href="../terms.html">Terms of Service</a><a class="flink" href="../contact.html">Contact</a><a class="flink" href="#bug">Bugs & feedback</a></nav>
+    <p class="f-biz"><span>Dalnara Games (달나라 게임즈) · Operated by JKCOMMERCE</span><span>CEO Jae Kyung Kim · Business registration no. 874-32-01793</span><span>Room 401-328, 4F, 820 Olympic-ro, Gangdong-gu, Seoul, Republic of Korea</span><span>© 2026 Dalnara Games</span></p>
+  </div>
+  <p class="f-big" aria-hidden="true"><span lang="ko">달나라 게임즈</span><img src="../../assets/site/seal.webp" alt="" width="104" height="104" loading="lazy"></p>
+</footer>
+<script src="../../assets/site/yt.js?v=f635e1bb"></script>
+<script src="../../assets/site/site.js?v=f635e1bb"></script>
 </body>
 </html>

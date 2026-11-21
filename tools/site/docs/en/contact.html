@@ -1,0 +1,37 @@
+<div class="doc">
+    <h1>Contact</h1>
+    <p class="when">Game talk or bugs, send them by email.</p>
+  </div>
+  <article class="paper policy contact">
+      <p class="meta" id="for-game" hidden></p>
+      <p>If you get stuck or something looks wrong in a game, let me know by email. Tap the button below to open your mail app.</p>
+      <p><a class="seal-btn" id="mail" href="mailto:dalnaragames.official@gmail.com?subject=Dalnara%20Games%20inquiry">Write an email</a></p>
+      <p class="mailaddr">dalnaragames.official@<wbr>gmail.com</p>
+      <h2>Good to include</h2>
+      <ul class="dots">
+        <li>The game’s name</li>
+        <li>Your phone model (e.g. Galaxy S24). You can find it in Settings under “About phone”</li>
+        <li>A screenshot. If something on the screen looks wrong, take a picture of it and attach it</li>
+      </ul>
+      <p>A line or two about what happened is plenty.</p>
+      <h2>Reply</h2>
+      <p>I’ll reply as soon as I can. I make these games by myself, so it may take a little while.</p>
+      <h2>To delete a weekly ranking record</h2>
+      <p>Tell me the game, the name shown on the ranking, the score and the week. I’ll find it and delete it.</p>
+      <p class="fine">Your email address and message are only used to reply to you, and are deleted one year after I reply. See the <a href="privacy.html">Privacy Policy</a> for details.</p>
+  </article>
+<script>
+(function () {
+  var N = {"aquarium": "Just One More Fish", "stoneskip": "Bouncy Skip", "chicken": "Stair Legend", "house": "Ghosts, Begone!", "wordsort": "낱말 서랍 (Word Drawers)", "nonogram": "Kankan Pixels", "colorsort": "Jelly Palette"}, T = {"line": "About {g}", "subj": "[{g}] Inquiry", "subj0": "Dalnara Games inquiry", "body": "Game: {g}\nPhone model: \nWhat happened: \n\n(If you have a screenshot, please attach it)\n", "body0": "Game: \nPhone model: \nWhat happened: \n\n(If you have a screenshot, please attach it)\n"};
+  var q = new URLSearchParams(location.search);
+  var g = String(q.get('game') || '').toLowerCase().replace(/^com\.dalnaragames\./, '');
+  if (!/^[a-z0-9_]{1,30}$/.test(g)) g = '';
+  var name = N[g] || '';
+  var label = name || g;
+  var subj = label ? T.subj.replace('{g}', label) : T.subj0;
+  var body = label ? T.body.replace('{g}', label) : T.body0;
+  var a = document.getElementById('mail');
+  if (a) a.href = 'mailto:dalnaragames.official@gmail.com?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
+  if (name) { var p = document.getElementById('for-game'); p.textContent = T.line.replace('{g}', name); p.hidden = false; }
+})();
+</script>

@@ -1,21 +1,22 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ja" data-design="site">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>階段の伝説 · Dalnara Games</title>
-<meta name="description" content="エレベーターが点検中のマンションで、チキンを持って階段で屋上まで配達するドット絵のゲーム「階段の伝説：チキンを持って屋上まで」。階段が曲がるところでタップするだけです。">
+<meta name="description" content="階段の伝説・チキンを持って階段をのぼります。Google Playでクローズドテスト中。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Dalnara Games">
 <meta property="og:title" content="階段の伝説 · Dalnara Games">
-<meta property="og:description" content="エレベーターが点検中のマンションで、チキンを持って階段で屋上まで配達するドット絵のゲーム「階段の伝説：チキンを持って屋上まで」。階段が曲がるところでタップするだけです。">
-<meta property="og:image" content="https://dalnaragames.com/assets/stairs-run.webp">
+<meta property="og:description" content="階段の伝説・チキンを持って階段をのぼります。Google Playでクローズドテスト中。">
+<meta property="og:image" content="https://dalnaragames.com/assets/sea.webp">
 <meta property="og:url" content="https://dalnaragames.com/ja/delivery/">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:locale:alternate" content="ko_KR">
 <meta property="og:locale:alternate" content="zh_TW">
 <meta property="og:locale:alternate" content="en_US">
-<meta name="theme-color" content="#15193d">
+<meta name="theme-color" content="#f3eee3">
+<meta name="color-scheme" content="light">
 <link rel="canonical" href="https://dalnaragames.com/ja/delivery/">
 <link rel="alternate" hreflang="ko" href="https://dalnaragames.com/delivery/">
 <link rel="alternate" hreflang="ja" href="https://dalnaragames.com/ja/delivery/">
@@ -23,59 +24,110 @@
 <link rel="alternate" hreflang="en" href="https://dalnaragames.com/en/delivery/">
 <link rel="alternate" hreflang="zh-HK" href="https://dalnaragames.com/zh-TW/delivery/">
 <link rel="alternate" hreflang="x-default" href="https://dalnaragames.com/en/delivery/">
+<script src="../../lang.js?v=f635e1bb"></script>
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="../../assets/favicon-16.png" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="preload" href="../../assets/fonts/Galmuri11-Bold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../../assets/fonts/SongMyung-logo.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../style.css?v=20261118a">
-<script src="../../lang.js?v=20261118a"></script>
+<link rel="preload" href="../../assets/site/fonts/title.woff2?v=f635e1bb" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/site/fonts/ui.woff2?v=f635e1bb" as="font" type="font/woff2" crossorigin>
+<style>@view-transition{navigation:auto}</style>
+<link rel="stylesheet" href="../../assets/site/fonts.css?v=f635e1bb">
+<link rel="stylesheet" href="../../assets/site/site.css?v=f635e1bb">
+<script>window.DN_T={"moon": ["新月", "三日月", "上弦の月", "満ちていく月", "満月", "欠けていく月", "下弦の月", "有明の月"], "greet": {"dawn": "夜明けまで起きているんですね", "morning": "おはようございます", "day": "こんにちは", "evening": "こんばんは", "night": "夜ふかしさん、こんばんは"}, "copied": "コピーしました", "picked": "アドレスを選択しました。長押しでコピーしてください", "nw": "新しいウィンドウ"};(function(){var d=document.documentElement,m='light';try{if(localStorage.getItem('dn-seen-site'))d.classList.add('seen');if(localStorage.getItem('dn-mode')==='dark')m='dark'}catch(e){}
+d.setAttribute('data-mode',m);var t=document.querySelector('meta[name=theme-color]');if(t)t.setAttribute('content',m==='dark'?'#15161a':'#f3eee3');
+function q(v){if(v)['ready','finished','updateCallbackDone'].forEach(function(k){v[k]&&v[k].catch(function(){})})}
+addEventListener('unhandledrejection',function(e){var r=e.reason;if(r&&r.name==='InvalidStateError'&&/ransition/.test(r.message||''))e.preventDefault()});
+addEventListener('pageswap',function(e){q(e.viewTransition)});
+addEventListener('pagereveal',function(e){q(e.viewTransition);try{var p=JSON.parse(sessionStorage.getItem('dn-vt')||'null');if(p){d.style.setProperty('--vx',p[0]+'%');d.style.setProperty('--vy',p[1]+'%');sessionStorage.removeItem('dn-vt')}}catch(x){}})})()</script>
 </head>
 <body>
-<div class="page">
-  <div class="top">
-    <a class="mark" href="../"><img class="mk" src="../../assets/logo-mark-light.png" alt="" width="40" height="40"><span lang="ko">달나라 게임즈</span></a>
-    <nav aria-label="メニュー"><a href="https://www.threads.com/@dalnara_games" rel="noopener">Threads</a><a href="../#game">ゲーム</a><a href="../#log">記録</a><a href="../#letter">お便り</a></nav>
-    <details class="lang"><summary title="言語 · Language"><svg class="globe" width="13" height="13" viewBox="0 0 13 13" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M4 0h5v1H4zM2 1h2v1H2zM9 1h2v1H9zM1 2h1v2H1zM11 2h1v2h-1zM0 4h1v5H0zM12 4h1v5h-1zM1 9h1v2H1zM11 9h1v2h-1zM2 11h2v1H2zM9 11h2v1H9zM4 12h5v1H4zM6 1h1v11H6zM1 6h11v1H1zM4 2h1v2H4zM3 4h1v5H3zM4 9h1v2H4zM8 2h1v2H8zM9 4h1v5H9zM8 9h1v2H8z"/></svg><span class="vh">言語: </span>日本語</summary><ul><li><a href="../../delivery/" hreflang="ko" lang="ko" data-setlang="ko">한국어</a></li><li><a href="./" hreflang="ja" lang="ja" data-setlang="ja" aria-current="true">日本語</a></li><li><a href="../../zh-TW/delivery/" hreflang="zh-TW" lang="zh-TW" data-setlang="zh-TW">繁體中文</a></li><li><a href="../../en/delivery/" hreflang="en" lang="en" data-setlang="en">English</a></li></ul></details>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="top"><div class="in">
+  <a class="logo" href="../"><img class="lg-l" src="../../assets/site/logo-ink.webp" alt="" width="40" height="40"><img class="lg-d" src="../../assets/site/logo-light.webp" alt="" width="40" height="40"><span><span lang="ko">달나라 게임즈</span></span><span class="vh"> Dalnara Games</span></a>
+  <div class="tools"><button type="button" class="snd" data-sound data-on="音 オン" data-off="音 オフ" aria-pressed="false" data-sfx="none"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path class="w1" d="M15.5 9a4 4 0 0 1 0 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="w2" d="M18 6.5a7.5 7.5 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="x" d="M16 9.5l5 5M21 9.5l-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="snd-l">音 オフ</span></button><button type="button" class="mode-b" data-mode-toggle aria-pressed="false" data-sfx="none" data-light="明るく" data-dark="暗く" data-aria="画面の明るさ" aria-label="画面の明るさ: 明るく"><svg class="ico i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></g></svg><svg class="ico i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="currentColor"/></svg><span class="mode-l">明るく</span></button><div class="lang"><button type="button" class="lang-b" aria-expanded="false" aria-controls="langm" aria-label="言語: 日本語"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></g></svg><span>JA</span></button><div class="lang-m" id="langm" hidden><a href="../../delivery/" hreflang="ko" lang="ko" data-setlang="ko">한국어</a><a href="./" hreflang="ja" lang="ja" data-setlang="ja" aria-current="true">日本語</a><a href="../../zh-TW/delivery/" hreflang="zh-TW" lang="zh-TW" data-setlang="zh-TW">繁體中文</a><a href="../../en/delivery/" hreflang="en" lang="en" data-setlang="en">English</a></div></div><button type="button" class="menu-b" aria-expanded="false" aria-controls="gm" data-sfx="menu">メニュー</button></div>
+</div></header>
+<div class="gmenu" id="gm" hidden><div class="gm-in">
+  <p class="gm-h"><span>メニュー</span><button type="button" class="gm-x" data-sfx="tick">閉じる</button></p>
+  <nav aria-label="メニュー"><p class="gm-g">このページ</p><ol><li><a href="#game" data-sfx="tick" data-jump="game"><span class="cur" aria-hidden="true">▶</span><span class="mn">★</span>階段の伝説</a></li><li><a href="#about" data-sfx="tick" data-jump="about"><span class="cur" aria-hidden="true">▶</span><span class="mn">01</span>紹介</a></li><li><a href="#how" data-sfx="tick" data-jump="how"><span class="cur" aria-hidden="true">▶</span><span class="mn">02</span>あそび方</a></li><li><a href="#points" data-sfx="tick" data-jump="points"><span class="cur" aria-hidden="true">▶</span><span class="mn">03</span>ご近所・ライダー</a></li><li><a href="#shots" data-sfx="tick" data-jump="shots"><span class="cur" aria-hidden="true">▶</span><span class="mn">04</span>画面</a></li><li><a href="#hlog" data-sfx="tick" data-jump="hlog"><span class="cur" aria-hidden="true">▶</span><span class="mn">05</span>記録</a></li><li><a href="#bug" data-sfx="tick" data-jump="bug"><span class="cur" aria-hidden="true">▶</span><span class="mn">06</span>不具合・ご意見</a></li></ol><p class="gm-g">トップページ</p><ol><li><a href="../#top" data-sfx="tick"><span class="cur" aria-hidden="true">▶</span><span class="mn">01</span>トップ</a></li><li><a href="../#games" data-sfx="tick"><span class="cur" aria-hidden="true">▶</span><span class="mn">02</span>ゲームを選ぶ</a></li><li><a href="../#log" data-sfx="tick"><span class="cur" aria-hidden="true">▶</span><span class="mn">03</span>記録</a></li><li><a href="../#next" data-sfx="tick"><span class="cur" aria-hidden="true">▶</span><span class="mn">04</span>次の版</a></li><li><a href="../#news" data-sfx="tick"><span class="cur" aria-hidden="true">▶</span><span class="mn">05</span>お知らせ</a></li><li><a href="../#yt" data-sfx="tick"><span class="cur" aria-hidden="true">▶</span><span class="mn">06</span>YouTube</a></li><li><a href="../#bug" data-sfx="tick"><span class="cur" aria-hidden="true">▶</span><span class="mn">07</span>不具合・ご意見</a></li></ol></nav>
+  <p class="gm-tip">↑ ↓ で選んで Enter</p>
+</div></div>
+
+<main id="main">
+<section class="gh" id="game" aria-labelledby="hm-h"><div class="in">
+  <a class="back" href="../#games" data-sfx="tick"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>ゲームを選ぶ</a>
+  <div class="screen gh-s"><svg class="frame" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M15 17 L53 20 L90 20 L124 14 L165 16 L203 9 L238 10 L276 15 L311 10 L350 20 L389 9 L426 9 L463 9 L498 19 L536 10 L577 19 L611 20 L650 16 L686 20 L725 21 L763 11 L798 9 L835 8 L873 15 L909 16 L948 11 L990 14 L983 51 L989 87 L993 124 L989 165 L979 202 L984 239 L979 274 L982 315 L982 352 L992 390 L984 425 L986 464 L981 501 L990 539 L980 577 L980 611 L988 651 L984 689 L987 724 L983 760 L980 798 L989 839 L981 872 L993 911 L985 948 L986 991 L948 985 L909 992 L872 986 L838 981 L800 992 L762 990 L723 985 L685 991 L649 985 L614 991 L577 985 L537 989 L500 983 L462 981 L425 993 L390 988 L350 984 L311 983 L277 991 L238 990 L202 989 L164 990 L126 989 L88 986 L53 989 L11 988 L16 949 L7 911 L11 875 L13 838 L16 800 L12 762 L17 726 L12 688 L19 650 L21 614 L14 575 L9 539 L20 500 L17 464 L17 424 L18 388 L16 350 L16 314 L16 277 L7 237 L13 202 L10 164 L16 124 L14 88 L8 50Z" vector-effect="non-scaling-stroke"/><path class="f2" d="M15 17 L53 20 L90 20 L124 14 L165 16 L203 9 L238 10 L276 15 L311 10 L350 20 L389 9 L426 9 L463 9 L498 19 L536 10 L577 19 L611 20 L650 16 L686 20 L725 21 L763 11 L798 9 L835 8 L873 15 L909 16 L948 11 L990 14 L983 51 L989 87 L993 124 L989 165 L979 202 L984 239 L979 274 L982 315 L982 352 L992 390 L984 425 L986 464 L981 501 L990 539 L980 577 L980 611 L988 651 L984 689 L987 724 L983 760 L980 798 L989 839 L981 872 L993 911 L985 948 L986 991 L948 985 L909 992 L872 986 L838 981 L800 992 L762 990 L723 985 L685 991 L649 985 L614 991 L577 985 L537 989 L500 983 L462 981 L425 993 L390 988 L350 984 L311 983 L277 991 L238 990 L202 989 L164 990 L126 989 L88 986 L53 989 L11 988 L16 949 L7 911 L11 875 L13 838 L16 800 L12 762 L17 726 L12 688 L19 650 L21 614 L14 575 L9 539 L20 500 L17 464 L17 424 L18 388 L16 350 L16 314 L16 277 L7 237 L13 202 L10 164 L16 124 L14 88 L8 50Z" vector-effect="non-scaling-stroke" transform="translate(6 5)"/></svg>
+    <div class="gh-top"><p class="pk-kind"><span class="no">03</span>ドット絵の階段配達</p>
+    <h1 class="gh-n" id="hm-h">階段の伝説</h1><p class="gh-tail">チキンを持って屋上まで</p></div>
+    <div class="gh-m"><video muted playsinline loop preload="none" poster="../../assets/loops/delivery.webp" aria-label="階段の伝説のゲーム画面"><source src="../../assets/loops/delivery.mp4" type="video/mp4"></video></div>
+    <div class="gh-i">
+      <ul class="gh-names"><li lang="ko">계단의 전설</li><li lang="zh-TW">樓梯傳說</li><li lang="en">Stair Legend</li></ul>
+      <p class="pk-st st-test"><i aria-hidden="true"></i>Google Playでクローズドテスト中</p>
+      <ul class="stats"><li><span class="k">ライダー</span><b><span data-count="17">17</span><small>人</small></b></li><li><span class="k">ご近所さん</span><b><span data-count="7">7</span><small>人</small></b></li><li><span class="k">ご近所の話</span><b><span data-count="35">35</span><small>話</small></b></li><li><span class="k">言語</span><b><span data-count="1">1</span><small>言語</small></b></li></ul>
+      <p class="gh-note">いまは韓国語だけです</p>
+    </div>
   </div>
+  <p class="gh-soon">いまGoogle Playでクローズドテスト中です。正式に出たら、ここにダウンロード先をのせます。</p>
+</div></section>
 
-  <p class="back"><a href="../#game">&lt; ゲーム一覧</a></p>
-  <section class="one">
-    <article class="paper">
-      <p class="meta">No.03 · Google Playでクローズドテスト中</p>
-      <h2>階段の伝説</h2>
-      <p class="sub">チキンを持って屋上まで · 階段配達のドット絵ゲーム</p>
-      <p>エレベーターが点検中のマンションで、チキンを持って階段で配達するゲームです。ライダーは自分で1段ずつのぼっていくので、階段が曲がるところで画面をタップするだけです。</p>
-      <p>向きをまちがえると足をふみはずして終わりです。外から見ると15階建てなのに、どうして階段に終わりがないのかもわかります（笑）</p>
-      <ul class="dots">
-        <li>ドアのある階を通ると、自動で配達します。配達料とチップ袋がもらえます</li>
-        <li>住人7人に、それぞれ5話ずつお話があります。最後まで見ると、その住人がいっしょに配達に出てくれます</li>
-        <li>いっしょに配達するライダーは17人です。ネコと柴犬もいます</li>
-        <li>かせいだお金がたまると、ライダーの物語が1章ずつ開きます。最後の章は、自分のチキン屋さんのオープンです</li>
-        <li>100階に着くと「階段の伝説」の称号がもらえます</li>
-        <li>今週のランキングがあって、毎週月曜日に新しく始まります</li>
-        <li>広告はボタンを押したときだけ出ます</li>
-        <li>いまは韓国語だけです</li>
-      </ul>
-      <div class="figs">
-        <figure><img src="../../assets/stairs-run.webp" alt="階段が曲がるところで、ライダーがチキンを持ってのぼる画面" loading="lazy" width="600" height="1067"><figcaption>曲がるときにタップ</figcaption></figure>
-        <figure><img src="../../assets/stairs-crew.webp" alt="いっしょに配達するライダーを選ぶ待機室の画面" loading="lazy" width="600" height="1067"><figcaption>ライダー待機室</figcaption></figure>
-        <figure><img src="../../assets/stairs-story.webp" alt="ライダーの物語 第3章「階数が合わない」の画面" loading="lazy" width="600" height="1067"><figcaption>ライダーの物語</figcaption></figure>
-      </div>
-      <p class="soonline">いまGoogle Playでクローズドテスト中です。正式に出たら、ここにダウンロード先をのせます。</p>
-    </article>
-  </section>
-  <hr class="rule">
+<nav class="jump" aria-label="ジャンプ"><div class="jump-in"><a href="#about" data-jump="about" data-sfx="tick">紹介</a><a href="#how" data-jump="how" data-sfx="tick">あそび方</a><a href="#points" data-jump="points" data-sfx="tick">ご近所・ライダー</a><a href="#shots" data-jump="shots" data-sfx="tick">画面</a><a href="#hlog" data-jump="hlog" data-sfx="tick">記録</a><a href="#bug" data-jump="bug" data-sfx="tick">不具合・ご意見</a></div></nav>
 
-  <footer>
-    <p class="links"><a href="../privacy.html">プライバシーポリシー</a> &nbsp;·&nbsp; <a href="../terms.html">利用規約</a> &nbsp;·&nbsp; <a href="../contact.html">お問い合わせ</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/dalnara_games/" rel="noopener">Instagram</a> &nbsp;·&nbsp; <a href="https://www.threads.com/@dalnara_games" rel="noopener">Threads</a></p>
-    <p>Dalnara Games（<span lang="ko">달나라 게임즈</span>）・運営 JKCOMMERCE</p>
-    <p>代表 キム・ジェギョン（Jae Kyung Kim）・事業者登録番号 874-32-01793</p>
-    <p>大韓民国 ソウル特別市 江東区 オリンピック路 820、4階 401-328号</p>
-    <p>dalnaragames.official@gmail.com</p>
-    <p style="margin-top:10px">© 2026 Dalnara Games</p>
-  </footer>
-</div>
+<section class="about" id="about" aria-labelledby="about-h"><div class="in">
+  <div class="sec-h"><h2 id="about-h">紹介</h2></div>
+  <div class="about-t"><p>エレベーターが点検中のマンションで、チキンを持って階段で配達するゲームです。</p><p>外から見ると15階建てなのに、どうして階段に終わりがないのかもわかります（笑）</p><p>広告はボタンを押したときだけ出ます。</p></div>
+</div></section>
+
+<section class="how" id="how" aria-labelledby="how-h"><div class="in">
+  <div class="sec-h"><h2 id="how-h">あそび方</h2></div>
+  <ol class="how-l"><li class="rv"><span class="key" aria-hidden="true">1</span><p>ライダーは自分で1段ずつのぼります</p></li><li class="rv"><span class="key" aria-hidden="true">2</span><p>階段が曲がるところで画面をタップします</p></li><li class="rv"><span class="key" aria-hidden="true">3</span><p>向きをまちがえると足をふみはずして終わりです</p></li></ol>
+</div></section>
+
+<section class="seas" id="points" aria-labelledby="pt-h"><div class="in">
+  <div class="sec-h"><h2 id="pt-h">ご近所さんとライダー</h2></div>
+  <ol class="pt-l"><li class="rv"><span class="sn">01</span><div><b>ご近所さん7人</b><p>それぞれ5話ずつお話があります。最後まで見ると、その住人がいっしょに配達に出てくれます</p></div></li><li class="rv"><span class="sn">02</span><div><b>ライダー17人</b><p>ネコと柴犬もいます</p></div></li><li class="rv"><span class="sn">03</span><div><b>ライダーの物語</b><p>かせいだお金がたまると1章ずつ開きます。最後の章は、自分のチキン屋さんのオープンです</p></div></li><li class="rv"><span class="sn">04</span><div><b>100階</b><p>着くと「階段の伝説」の称号がもらえます</p></div></li><li class="rv"><span class="sn">05</span><div><b>今週のランキング</b><p>毎週月曜日に新しく始まります</p></div></li></ol>
+</div></section>
+
+<section class="shots" id="shots" aria-labelledby="sh-h"><div class="in">
+  <div class="sec-h"><h2 id="sh-h">ゲーム画面</h2></div>
+  <ul class="sh-row"><li><figure><img src="../../assets/stairs-run.webp" alt="階段が曲がるところで、ライダーがチキンを持ってのぼる画面" width="600" height="1040" loading="lazy" decoding="async"><figcaption>曲がるときにタップ</figcaption></figure></li><li><figure><img src="../../assets/stairs-crew.webp" alt="いっしょに配達するライダーを選ぶ待機室の画面" width="600" height="1040" loading="lazy" decoding="async"><figcaption>ライダー待機室</figcaption></figure></li><li><figure><img src="../../assets/stairs-story.webp" alt="ライダーの物語 第3章「階数が合わない」の画面" width="600" height="1040" loading="lazy" decoding="async"><figcaption>ライダーの物語</figcaption></figure></li></ul>
+</div></section>
+
+<section class="log" id="hlog" data-hscroll aria-labelledby="hlog-h">
+  <div class="hs-pin"><div class="in">
+    <div class="sec-h"><h2 id="hlog-h">アップデート記録</h2><p class="yr">2026</p></div>
+    <div class="hs-win"><ol class="hs-track"><li class="hs-i"><span class="node" aria-hidden="true"></span><time>11.15</time><b>クローズドテスト開始</b><p>1.0.0</p></li><li class="hs-i"><span class="node" aria-hidden="true"></span><time>11.16</time><b>1.0.1</b><p>広告・課金</p></li><li class="hs-i now"><span class="node" aria-hidden="true"></span><time>いま</time><p>次の版を準備中</p></li></ol></div>
+    <p class="hs-tip"><svg viewBox="0 0 30 14" aria-hidden="true"><path d="M2 7h24M20 2l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>下にスクロールすると横に流れます</p>
+  </div></div>
+</section>
+
+<section class="next" id="hnext" aria-labelledby="hnext-h"><div class="in">
+  <div class="sec-h"><h2 id="hnext-h">次の版</h2></div>
+  <div class="up-grid"><article class="up rv"><p class="up-w">次の版</p><h3>階段の伝説</h3><p class="up-v">1.0.2</p><ul><li>日本語・繁体字中国語・英語</li></ul></article></div>
+</div></section>
+
+<section class="bug" id="bug" aria-labelledby="bug-h"><div class="in">
+  <div class="sec-h"><h2 id="bug-h">不具合・ご意見</h2></div>
+  <div class="fb-grid"><article class="fb b"><h3>不具合を知らせる</h3><p>おかしな点を見つけたら教えてください。</p><div class="fb-row"><a class="seal-btn sm" href="mailto:dalnaragames.official@gmail.com?subject=%5B%E4%B8%8D%E5%85%B7%E5%90%88%5D%20" data-sfx="go">メールを書く</a><button type="button" class="copy" data-copy="dalnaragames.official@gmail.com">アドレスをコピー</button><span class="copy-msg" aria-live="polite"></span></div></article><article class="fb i"><h3>ゲームへの意見</h3><p>ほしいもの、楽しかったこと、物足りないことを送ってください。</p><div class="fb-row"><a class="seal-btn sm" href="mailto:dalnaragames.official@gmail.com?subject=%5B%E3%81%94%E6%84%8F%E8%A6%8B%5D%20" data-sfx="go">メールを書く</a><button type="button" class="copy" data-copy="dalnaragames.official@gmail.com">アドレスをコピー</button><span class="copy-msg" aria-live="polite"></span></div></article></div>
+  <p class="fb-mail"><span class="mail-a" data-copy-src>dalnaragames.official@gmail.com</span></p>
+  <div class="fb-more"><a class="flink" href="../contact.html?game=chicken&amp;lang=ja">ゲームを選んで問い合わせる</a><span class="fb-sns">SNSのコメントでもOKです。 <a class="flink" href="https://www.threads.com/@dalnara_games" target="_blank" rel="noopener">Threads<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5l-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="vh"> (新しいウィンドウ)</span></a> <a class="flink" href="https://www.instagram.com/dalnara_games/" target="_blank" rel="noopener">Instagram<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5l-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="vh"> (新しいウィンドウ)</span></a></span></div>
+</div></section>
+
+<section class="nextg"><div class="in">
+  <p class="k">次のゲーム</p>
+  <a class="nextg-b" href="../house/" data-sfx="go"><span class="ng">悪霊退散</span><span class="blink" aria-hidden="true">▶</span></a>
+  <a class="seal-btn" href="../#games" data-sfx="go">ゲーム一覧へ</a>
+</div></section>
+</main>
+<footer class="foot" id="foot">
+  <div class="in">
+    <p class="f-h">つくる様子はSNSにのせています（韓国語）</p>
+    <nav class="f-sns" aria-label="SNS"><a class="sk" href="https://www.threads.com/@dalnara_games" target="_blank" rel="noopener" data-sfx="go"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v10H11l-4.5 4v-4H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 9.5h8M8 12.3h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="sn">Threads<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5l-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="vh"> (新しいウィンドウ)</span></a><a class="sk" href="https://www.instagram.com/dalnara_games/" target="_blank" rel="noopener" data-sfx="go"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 8h4l1.6-2.5h5.8L16.5 8h4v11h-17z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="13.2" r="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span class="sn">Instagram<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5l-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="vh"> (新しいウィンドウ)</span></a><a class="sk" href="https://www.youtube.com/@dalnara_games" target="_blank" rel="noopener" data-sfx="go"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12.5" rx="1" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 8.3v5l4.3-2.5z" fill="currentColor"/><path d="M8 20h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="sn">YouTube<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5l-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="vh"> (新しいウィンドウ)</span></a></nav>
+    <nav class="f-links" aria-label="案内"><a class="flink" href="../privacy.html">プライバシーポリシー</a><a class="flink" href="../terms.html">利用規約</a><a class="flink" href="../contact.html">お問い合わせ</a><a class="flink" href="#bug">不具合・ご意見</a></nav>
+    <p class="f-biz"><span>Dalnara Games（달나라 게임즈）・運営 JKCOMMERCE</span><span>代表 キム・ジェギョン（Jae Kyung Kim）・事業者登録番号 874-32-01793</span><span>大韓民国 ソウル特別市 江東区 オリンピック路 820、4階 401-328号</span><span>© 2026 Dalnara Games</span></p>
+  </div>
+  <p class="f-big" aria-hidden="true"><span lang="ko">달나라 게임즈</span><img src="../../assets/site/seal.webp" alt="" width="104" height="104" loading="lazy"></p>
+</footer>
+<script src="../../assets/site/yt.js?v=f635e1bb"></script>
+<script src="../../assets/site/site.js?v=f635e1bb"></script>
 </body>
 </html>

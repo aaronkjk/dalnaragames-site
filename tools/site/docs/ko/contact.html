@@ -1,0 +1,37 @@
+<div class="doc">
+    <h1>문의</h1>
+    <p class="when">게임 얘기든 버그든 메일로 보내 주세요.</p>
+  </div>
+  <article class="paper policy contact">
+      <p class="meta" id="for-game" hidden></p>
+      <p>게임하다 막히거나 이상한 게 보이면 메일로 알려 주세요. 아래 버튼을 누르면 메일 앱이 열려요.</p>
+      <p><a class="seal-btn" id="mail" href="mailto:dalnaragames.official@gmail.com?subject=%EB%8B%AC%EB%82%98%EB%9D%BC%20%EA%B2%8C%EC%9E%84%EC%A6%88%20%EB%AC%B8%EC%9D%98">메일 쓰기</a></p>
+      <p class="mailaddr">dalnaragames.official@<wbr>gmail.com</p>
+      <h2>같이 적어 주면 좋은 것</h2>
+      <ul class="dots">
+        <li>게임 이름</li>
+        <li>폰 기종 (예: 갤럭시 S24). 폰 설정의 '휴대전화 정보'에 나와요</li>
+        <li>화면 사진. 이상한 화면이 있으면 찍어서 붙여 주세요</li>
+      </ul>
+      <p>무슨 일이 있었는지는 한두 줄이면 충분해요.</p>
+      <h2>답장</h2>
+      <p>되도록 빨리 답장할게요. 혼자 만드는 거라 조금 늦을 수도 있어요.</p>
+      <h2>주간 랭킹 기록을 지우고 싶으면</h2>
+      <p>게임 이름, 순위표에 보이는 이름, 기록, 그 주를 적어 주세요. 찾아서 지울게요.</p>
+      <p class="fine">보내 주신 메일 주소와 내용은 답장하는 데만 쓰고, 답장한 뒤 1년이 지나면 지워요. 자세한 건 <a href="privacy.html">개인정보처리방침</a>에 있어요.</p>
+  </article>
+<script>
+(function () {
+  var N = {"aquarium": "한 마리만 더", "stoneskip": "통통 물수제비", "chicken": "계단의 전설", "house": "잡귀야 물러가라", "wordsort": "낱말 서랍", "nonogram": "칸칸 그림", "colorsort": "젤리 팔레트"}, T = {"line": "「{g}」 문의예요", "subj": "[{g}] 문의", "subj0": "달나라 게임즈 문의", "body": "게임: {g}\n폰 기종: \n무슨 일이 있었는지: \n\n(화면 사진이 있으면 같이 붙여 주세요)\n", "body0": "게임: \n폰 기종: \n무슨 일이 있었는지: \n\n(화면 사진이 있으면 같이 붙여 주세요)\n"};
+  var q = new URLSearchParams(location.search);
+  var g = String(q.get('game') || '').toLowerCase().replace(/^com\.dalnaragames\./, '');
+  if (!/^[a-z0-9_]{1,30}$/.test(g)) g = '';
+  var name = N[g] || '';
+  var label = name || g;
+  var subj = label ? T.subj.replace('{g}', label) : T.subj0;
+  var body = label ? T.body.replace('{g}', label) : T.body0;
+  var a = document.getElementById('mail');
+  if (a) a.href = 'mailto:dalnaragames.official@gmail.com?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
+  if (name) { var p = document.getElementById('for-game'); p.textContent = T.line.replace('{g}', name); p.hidden = false; }
+})();
+</script>

@@ -1,16 +1,22 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" data-design="site">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>통통 물수제비 · 달나라 게임즈</title>
-<meta name="description" content="통통한 토끼가 달밤 호수에서 물수제비 뜨는 게임 「통통 물수제비」. 한 판이 몇 초라 잠깐씩 하기 좋아요.">
+<meta name="description" content="통통 물수제비 · 토끼가 물수제비 떠요. 구글 플레이 비공개 테스트 중.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="달나라 게임즈">
 <meta property="og:title" content="통통 물수제비 · 달나라 게임즈">
-<meta property="og:description" content="통통한 토끼가 달밤 호수에서 물수제비 뜨는 게임 「통통 물수제비」. 한 판이 몇 초라 잠깐씩 하기 좋아요.">
-<meta property="og:image" content="https://dalnaragames.com/assets/skip-aim.webp">
+<meta property="og:description" content="통통 물수제비 · 토끼가 물수제비 떠요. 구글 플레이 비공개 테스트 중.">
+<meta property="og:image" content="https://dalnaragames.com/assets/sea.webp">
 <meta property="og:url" content="https://dalnaragames.com/tongtong/">
-<meta name="theme-color" content="#15193d">
-<!-- i18n:head -->
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="theme-color" content="#f3eee3">
+<meta name="color-scheme" content="light">
 <link rel="canonical" href="https://dalnaragames.com/tongtong/">
 <link rel="alternate" hreflang="ko" href="https://dalnaragames.com/tongtong/">
 <link rel="alternate" hreflang="ja" href="https://dalnaragames.com/ja/tongtong/">
@@ -18,64 +24,110 @@
 <link rel="alternate" hreflang="en" href="https://dalnaragames.com/en/tongtong/">
 <link rel="alternate" hreflang="zh-HK" href="https://dalnaragames.com/zh-TW/tongtong/">
 <link rel="alternate" hreflang="x-default" href="https://dalnaragames.com/en/tongtong/">
-<meta property="og:locale" content="ko_KR">
-<meta property="og:locale:alternate" content="ja_JP">
-<meta property="og:locale:alternate" content="zh_TW">
-<meta property="og:locale:alternate" content="en_US">
-<script src="../lang.js?v=20261118a"></script>
-<!-- /i18n:head -->
+<script src="../lang.js?v=f635e1bb"></script>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../assets/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="../assets/favicon-16.png" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
-<link rel="preload" href="../assets/fonts/Galmuri11-Bold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../assets/fonts/SongMyung-logo.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../style.css?v=20261118a">
+<link rel="preload" href="../assets/site/fonts/title.woff2?v=f635e1bb" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/site/fonts/ui.woff2?v=f635e1bb" as="font" type="font/woff2" crossorigin>
+<style>@view-transition{navigation:auto}</style>
+<link rel="stylesheet" href="../assets/site/fonts.css?v=f635e1bb">
+<link rel="stylesheet" href="../assets/site/site.css?v=f635e1bb">
+<script>window.DN_T={"moon": ["삭", "초승달", "상현달", "차오르는 달", "보름달", "기우는 달", "하현달", "그믐달"], "greet": {"dawn": "새벽까지 깨어 계시네요", "morning": "좋은 아침이에요", "day": "좋은 오후예요", "evening": "저녁 시간이에요", "night": "밤 올빼미님 안녕하세요"}, "copied": "복사했어요", "picked": "주소를 골라 두었어요. 길게 눌러 복사해 주세요", "nw": "새 창"};(function(){var d=document.documentElement,m='light';try{if(localStorage.getItem('dn-seen-site'))d.classList.add('seen');if(localStorage.getItem('dn-mode')==='dark')m='dark'}catch(e){}
+d.setAttribute('data-mode',m);var t=document.querySelector('meta[name=theme-color]');if(t)t.setAttribute('content',m==='dark'?'#15161a':'#f3eee3');
+function q(v){if(v)['ready','finished','updateCallbackDone'].forEach(function(k){v[k]&&v[k].catch(function(){})})}
+addEventListener('unhandledrejection',function(e){var r=e.reason;if(r&&r.name==='InvalidStateError'&&/ransition/.test(r.message||''))e.preventDefault()});
+addEventListener('pageswap',function(e){q(e.viewTransition)});
+addEventListener('pagereveal',function(e){q(e.viewTransition);try{var p=JSON.parse(sessionStorage.getItem('dn-vt')||'null');if(p){d.style.setProperty('--vx',p[0]+'%');d.style.setProperty('--vy',p[1]+'%');sessionStorage.removeItem('dn-vt')}}catch(x){}})})()</script>
 </head>
 <body>
-<div class="page">
-  <div class="top">
-    <a class="mark" href="../"><img class="mk" src="../assets/logo-mark-light.png" alt="" width="40" height="40">달나라 게임즈</a>
-    <nav aria-label="메뉴"><a href="https://www.threads.com/@dalnara_games" rel="noopener">쓰레드</a><a href="../#game">게임</a><a href="../#log">기록</a><a href="../#letter">편지</a></nav>
-    <details class="lang"><summary title="언어 · Language"><svg class="globe" width="13" height="13" viewBox="0 0 13 13" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M4 0h5v1H4zM2 1h2v1H2zM9 1h2v1H9zM1 2h1v2H1zM11 2h1v2h-1zM0 4h1v5H0zM12 4h1v5h-1zM1 9h1v2H1zM11 9h1v2h-1zM2 11h2v1H2zM9 11h2v1H9zM4 12h5v1H4zM6 1h1v11H6zM1 6h11v1H1zM4 2h1v2H4zM3 4h1v5H3zM4 9h1v2H4zM8 2h1v2H8zM9 4h1v5H9zM8 9h1v2H8z"/></svg><span class="vh">언어: </span>한국어</summary><ul><li><a href="./" hreflang="ko" lang="ko" data-setlang="ko" aria-current="true">한국어</a></li><li><a href="../ja/tongtong/" hreflang="ja" lang="ja" data-setlang="ja">日本語</a></li><li><a href="../zh-TW/tongtong/" hreflang="zh-TW" lang="zh-TW" data-setlang="zh-TW">繁體中文</a></li><li><a href="../en/tongtong/" hreflang="en" lang="en" data-setlang="en">English</a></li></ul></details>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="top"><div class="in">
+  <a class="logo" href="../"><img class="lg-l" src="../assets/site/logo-ink.webp" alt="" width="40" height="40"><img class="lg-d" src="../assets/site/logo-light.webp" alt="" width="40" height="40"><span>달나라 게임즈</span><span class="vh"> </span></a>
+  <div class="tools"><button type="button" class="snd" data-sound data-on="소리 켬" data-off="소리 끔" aria-pressed="false" data-sfx="none"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path class="w1" d="M15.5 9a4 4 0 0 1 0 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="w2" d="M18 6.5a7.5 7.5 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="x" d="M16 9.5l5 5M21 9.5l-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="snd-l">소리 끔</span></button><button type="button" class="mode-b" data-mode-toggle aria-pressed="false" data-sfx="none" data-light="밝게" data-dark="어둡게" data-aria="화면 밝기" aria-label="화면 밝기: 밝게"><svg class="ico i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></g></svg><svg class="ico i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="currentColor"/></svg><span class="mode-l">밝게</span></button><div class="lang"><button type="button" class="lang-b" aria-expanded="false" aria-controls="langm" aria-label="언어: 한국어"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></g></svg><span>KO</span></button><div class="lang-m" id="langm" hidden><a href="./" hreflang="ko" lang="ko" data-setlang="ko" aria-current="true">한국어</a><a href="../ja/tongtong/" hreflang="ja" lang="ja" data-setlang="ja">日本語</a><a href="../zh-TW/tongtong/" hreflang="zh-TW" lang="zh-TW" data-setlang="zh-TW">繁體中文</a><a href="../en/tongtong/" hreflang="en" lang="en" data-setlang="en">English</a></div></div><button type="button" class="menu-b" aria-expanded="false" aria-controls="gm" data-sfx="menu">메뉴</button></div>
+</div></header>
+<div class="gmenu" id="gm" hidden><div class="gm-in">
+  <p class="gm-h"><span>메뉴</span><button type="button" class="gm-x" data-sfx="tick">닫기</button></p>
+  <nav aria-label="메뉴"><p class="gm-g">이 쪽</p><ol><li><a href="#game" data-sfx="tick" data-jump="game"><span class="cur" aria-hidden="true">▶</span><span class="mn">★</span>통통 물수제비</a></li><li><a href="#about" data-sfx="tick" data-jump="about"><span class="cur" aria-hidden="true">▶</span><span class="mn">01</span>소개</a></li><li><a href="#how" data-sfx="tick" data-jump="how"><span class="cur" aria-hidden="true">▶</span><span class="mn">02</span>조작법</a></li><li><a href="#points" data-sfx="tick" data-jump="points"><span class="cur" aria-hidden="true">▶</span><span class="mn">03</span>장소·돌</a></li><li><a href="#shots" data-sfx="tick" data-jump="shots"><span class="cur" aria-hidden="true">▶</span><span class="mn">04</span>화면</a></li><li><a href="#hlog" data-sfx="tick" data-jump="hlog"><span class="cur" aria-hidden="true">▶</span><span class="mn">05</span>기록</a></li><li><a href="#bug" data-sfx="tick" data-jump="bug"><span class="cur" aria-hidden="true">▶</span><span class="mn">06</span>버그·의견</a></li></ol><p class="gm-g">처음 쪽</p><ol><li><a href="../#top" data-sfx="tick"><span class="cur" aria-hidden="true">▶</span><span class="mn">01</span>첫 화면</a></li><li><a href="../#games" data-sfx="tick"><span class="cur" aria-hidden="true">▶</span><span class="mn">02</span>게임 고르기</a></li><li><a href="../#log" data-sfx="tick"><span class="cur" aria-hidden="true">▶</span><span class="mn">03</span>기록</a></li><li><a href="../#next" data-sfx="tick"><span class="cur" aria-hidden="true">▶</span><span class="mn">04</span>다음 판</a></li><li><a href="../#news" data-sfx="tick"><span class="cur" aria-hidden="true">▶</span><span class="mn">05</span>소식</a></li><li><a href="../#yt" data-sfx="tick"><span class="cur" aria-hidden="true">▶</span><span class="mn">06</span>유튜브</a></li><li><a href="../#bug" data-sfx="tick"><span class="cur" aria-hidden="true">▶</span><span class="mn">07</span>버그·의견</a></li></ol></nav>
+  <p class="gm-tip">↑ ↓ 로 고르고 Enter</p>
+</div></div>
+
+<main id="main">
+<section class="gh" id="game" aria-labelledby="hm-h"><div class="in">
+  <a class="back" href="../#games" data-sfx="tick"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>게임 고르기</a>
+  <div class="screen gh-s"><svg class="frame" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M15 17 L53 20 L90 20 L124 14 L165 16 L203 9 L238 10 L276 15 L311 10 L350 20 L389 9 L426 9 L463 9 L498 19 L536 10 L577 19 L611 20 L650 16 L686 20 L725 21 L763 11 L798 9 L835 8 L873 15 L909 16 L948 11 L990 14 L983 51 L989 87 L993 124 L989 165 L979 202 L984 239 L979 274 L982 315 L982 352 L992 390 L984 425 L986 464 L981 501 L990 539 L980 577 L980 611 L988 651 L984 689 L987 724 L983 760 L980 798 L989 839 L981 872 L993 911 L985 948 L986 991 L948 985 L909 992 L872 986 L838 981 L800 992 L762 990 L723 985 L685 991 L649 985 L614 991 L577 985 L537 989 L500 983 L462 981 L425 993 L390 988 L350 984 L311 983 L277 991 L238 990 L202 989 L164 990 L126 989 L88 986 L53 989 L11 988 L16 949 L7 911 L11 875 L13 838 L16 800 L12 762 L17 726 L12 688 L19 650 L21 614 L14 575 L9 539 L20 500 L17 464 L17 424 L18 388 L16 350 L16 314 L16 277 L7 237 L13 202 L10 164 L16 124 L14 88 L8 50Z" vector-effect="non-scaling-stroke"/><path class="f2" d="M15 17 L53 20 L90 20 L124 14 L165 16 L203 9 L238 10 L276 15 L311 10 L350 20 L389 9 L426 9 L463 9 L498 19 L536 10 L577 19 L611 20 L650 16 L686 20 L725 21 L763 11 L798 9 L835 8 L873 15 L909 16 L948 11 L990 14 L983 51 L989 87 L993 124 L989 165 L979 202 L984 239 L979 274 L982 315 L982 352 L992 390 L984 425 L986 464 L981 501 L990 539 L980 577 L980 611 L988 651 L984 689 L987 724 L983 760 L980 798 L989 839 L981 872 L993 911 L985 948 L986 991 L948 985 L909 992 L872 986 L838 981 L800 992 L762 990 L723 985 L685 991 L649 985 L614 991 L577 985 L537 989 L500 983 L462 981 L425 993 L390 988 L350 984 L311 983 L277 991 L238 990 L202 989 L164 990 L126 989 L88 986 L53 989 L11 988 L16 949 L7 911 L11 875 L13 838 L16 800 L12 762 L17 726 L12 688 L19 650 L21 614 L14 575 L9 539 L20 500 L17 464 L17 424 L18 388 L16 350 L16 314 L16 277 L7 237 L13 202 L10 164 L16 124 L14 88 L8 50Z" vector-effect="non-scaling-stroke" transform="translate(6 5)"/></svg>
+    <div class="gh-top"><p class="pk-kind"><span class="no">02</span>3D 물수제비</p>
+    <h1 class="gh-n" id="hm-h">통통 물수제비</h1></div>
+    <div class="gh-m"><video muted playsinline loop preload="none" poster="../assets/loops/tongtong.webp" aria-label="통통 물수제비 게임 화면"><source src="../assets/loops/tongtong.mp4" type="video/mp4"></video></div>
+    <div class="gh-i">
+      <ul class="gh-names"><li lang="ja">ぽんぽん水切り</li><li lang="zh-TW">跳跳打水漂</li><li lang="en">Bouncy Skip</li></ul>
+      <p class="pk-st st-test"><i aria-hidden="true"></i>구글 플레이 비공개 테스트 중</p>
+      <ul class="stats"><li><span class="k">장소</span><b><span data-count="8">8</span><small>곳</small></b></li><li><span class="k">돌</span><b><span data-count="27">27</span><small>종</small></b></li><li><span class="k">던지는 방식</span><b><span data-count="4">4</span><small>가지</small></b></li><li><span class="k">뽑기</span><b class="w">없음</b></li></ul>
+      
+    </div>
   </div>
+  <p class="gh-soon">지금 구글 플레이에서 비공개 테스트 중이에요. 정식으로 나오면 여기에 받는 곳을 달아 둘게요.</p>
+</div></section>
 
-  <p class="back"><a href="../#game">&lt; 게임 목록</a></p>
-  <section class="one">
-    <article class="paper">
-      <p class="meta">No.02 · 구글 플레이 비공개 테스트 중</p>
-      <h2>통통 물수제비</h2>
-      <p class="sub">Bouncy Skip · 토끼가 뜨는 물수제비</p>
-      <p>달밤 호수에서 통통한 토끼가 물수제비 뜨는 게임이에요. 한 판이 몇 초면 끝나서 잠깐씩 하기 좋아요.</p>
-      <p>돌도 통통 튀고 토끼도 통통해서 이름이 통통 물수제비예요ㅋㅋ</p>
-      <ul class="dots">
-        <li>화면을 위로 쓸어 올리면 던져요. 돌이 물에 닿을 때 맞춰서 누르면 한 번 더 튀어요</li>
-        <li>던지는 방식은 4가지 중에 편한 걸로 고르면 돼요</li>
-        <li>장소가 8곳인데 다 달라요. 노을 지는 개울도 있고 눈 오는 호수도 있어요</li>
-        <li>돌은 27종이에요. 물가에서 줍거나 코인으로 사요. 달항아리처럼 생긴 돌도 있어요</li>
-        <li>토끼한테 목도리랑 갓을 씌울 수 있어요</li>
-        <li>매일 출석 도장이랑 미션이 있고 업적은 30개예요</li>
-        <li>한국어, 일본어, 중국어(번체), 영어로 할 수 있어요</li>
-        <li>뽑기는 안 넣었어요. 광고는 버튼을 누를 때만 나와요</li>
-      </ul>
-      <div class="figs">
-        <figure><img src="../assets/skip-aim.webp" alt="달밤 호숫가에서 토끼가 돌을 던지려는 화면" loading="lazy" width="600" height="1065"><figcaption>달맞이 호수</figcaption></figure>
-        <figure><img src="../assets/skip-flight.webp" alt="돌이 물 위를 튀는 화면" loading="lazy" width="600" height="1065"><figcaption>네 번째 튀는 중</figcaption></figure>
-        <figure><img src="../assets/skip-places.webp" alt="서로 다른 네 장소" loading="lazy" width="600" height="1065"><figcaption>장소마다 달라요</figcaption></figure>
-      </div>
-      <p class="soonline">지금 구글 플레이에서 비공개 테스트 중이에요. 정식으로 나오면 여기에 받는 곳을 달아 둘게요.</p>
-    </article>
-  </section>
-  <hr class="rule">
+<nav class="jump" aria-label="바로 가기"><div class="jump-in"><a href="#about" data-jump="about" data-sfx="tick">소개</a><a href="#how" data-jump="how" data-sfx="tick">조작법</a><a href="#points" data-jump="points" data-sfx="tick">장소·돌</a><a href="#shots" data-jump="shots" data-sfx="tick">화면</a><a href="#hlog" data-jump="hlog" data-sfx="tick">기록</a><a href="#bug" data-jump="bug" data-sfx="tick">버그·의견</a></div></nav>
 
-  <footer>
-    <p class="links"><a href="../privacy.html">개인정보처리방침 · Privacy Policy</a> &nbsp;·&nbsp; <a href="../terms.html">이용약관 · Terms</a> &nbsp;·&nbsp; <a href="../contact.html">문의 · Contact</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/dalnara_games/" rel="noopener">인스타그램</a> &nbsp;·&nbsp; <a href="https://www.threads.com/@dalnara_games" rel="noopener">쓰레드</a></p>
-    <p>달나라 게임즈(Dalnara Games) · 운영 JKCOMMERCE(제이케이 커머스)</p>
-    <p>대표 김재경 · 사업자등록번호 874-32-01793</p>
-    <p>서울특별시 강동구 올림픽로 820, 4층 401-328호</p>
-    <p>dalnaragames.official@gmail.com</p>
-    <p style="margin-top:10px">© 2026 Dalnara Games</p>
-  </footer>
-</div>
+<section class="about" id="about" aria-labelledby="about-h"><div class="in">
+  <div class="sec-h"><h2 id="about-h">소개</h2></div>
+  <div class="about-t"><p>달밤 호수에서 통통한 토끼가 물수제비 뜨는 게임이에요. 한 판이 몇 초면 끝나서 잠깐씩 하기 좋아요.</p><p>돌도 통통 튀고 토끼도 통통해서 이름이 통통 물수제비예요ㅋㅋ</p><p>뽑기는 안 넣었어요. 광고는 버튼을 누를 때만 나와요.</p></div>
+</div></section>
+
+<section class="how" id="how" aria-labelledby="how-h"><div class="in">
+  <div class="sec-h"><h2 id="how-h">조작법</h2></div>
+  <ol class="how-l"><li class="rv"><span class="key" aria-hidden="true">1</span><p>화면을 위로 쓸어 올리면 던져요</p></li><li class="rv"><span class="key" aria-hidden="true">2</span><p>돌이 물에 닿을 때 맞춰 누르면 한 번 더 튀어요</p></li><li class="rv"><span class="key" aria-hidden="true">3</span><p>던지는 방식은 4가지 중에 편한 걸로 골라요</p></li></ol>
+</div></section>
+
+<section class="seas" id="points" aria-labelledby="pt-h"><div class="in">
+  <div class="sec-h"><h2 id="pt-h">장소와 돌</h2></div>
+  <ol class="pt-l"><li class="rv"><span class="sn">01</span><div><b>장소 8곳</b><p>노을 지는 개울도 있고 눈 오는 호수도 있어요</p></div></li><li class="rv"><span class="sn">02</span><div><b>돌 27종</b><p>물가에서 줍거나 코인으로 사요. 달항아리처럼 생긴 돌도 있어요</p></div></li><li class="rv"><span class="sn">03</span><div><b>토끼 꾸미기</b><p>목도리랑 갓을 씌울 수 있어요</p></div></li><li class="rv"><span class="sn">04</span><div><b>출석·미션·업적</b><p>매일 출석 도장이랑 미션이 있고 업적은 30개예요</p></div></li></ol>
+</div></section>
+
+<section class="shots" id="shots" aria-labelledby="sh-h"><div class="in">
+  <div class="sec-h"><h2 id="sh-h">게임 화면</h2></div>
+  <ul class="sh-row"><li><figure><img src="../assets/skip-aim.webp" alt="달밤 호숫가에서 토끼가 돌을 던지려는 화면" width="600" height="1040" loading="lazy" decoding="async"><figcaption>달맞이 호수</figcaption></figure></li><li><figure><img src="../assets/skip-flight.webp" alt="돌이 물 위를 튀는 화면" width="600" height="1040" loading="lazy" decoding="async"><figcaption>네 번째 튀는 중</figcaption></figure></li><li><figure><img src="../assets/skip-places.webp" alt="서로 다른 네 장소" width="600" height="1040" loading="lazy" decoding="async"><figcaption>장소마다 달라요</figcaption></figure></li></ul>
+</div></section>
+
+<section class="log" id="hlog" data-hscroll aria-labelledby="hlog-h">
+  <div class="hs-pin"><div class="in">
+    <div class="sec-h"><h2 id="hlog-h">업데이트 기록</h2><p class="yr">2026</p></div>
+    <div class="hs-win"><ol class="hs-track"><li class="hs-i"><span class="node" aria-hidden="true"></span><time>11.09</time><b>이름을 정했어요</b><p>돌도 토끼도 통통해서 통통 물수제비</p></li><li class="hs-i"><span class="node" aria-hidden="true"></span><time>11.12</time><b>비공개 테스트 시작</b><p>구글 플레이</p></li><li class="hs-i"><span class="node" aria-hidden="true"></span><time>11.16</time><b>광고·결제</b><p>광고는 버튼을 누를 때만 나와요</p></li><li class="hs-i now"><span class="node" aria-hidden="true"></span><time>지금</time><p>다음 판 준비 중</p></li></ol></div>
+    <p class="hs-tip"><svg viewBox="0 0 30 14" aria-hidden="true"><path d="M2 7h24M20 2l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>내리면 옆으로 지나가요</p>
+  </div></div>
+</section>
+
+<section class="next" id="hnext" aria-labelledby="hnext-h"><div class="in">
+  <div class="sec-h"><h2 id="hnext-h">다음 판</h2></div>
+  <div class="up-grid"><article class="up rv"><p class="up-w">다음 판</p><h3>통통 물수제비</h3><p class="up-v">1.0.3</p><ul><li>휙 던지기 끝 스핀</li><li>결과 카드 코인 계산</li></ul></article></div>
+</div></section>
+
+<section class="bug" id="bug" aria-labelledby="bug-h"><div class="in">
+  <div class="sec-h"><h2 id="bug-h">버그·의견 보내기</h2></div>
+  <div class="fb-grid"><article class="fb b"><h3>버그 알려 주기</h3><p>이상한 점을 찾으면 알려 주세요.</p><div class="fb-row"><a class="seal-btn sm" href="mailto:dalnaragames.official@gmail.com?subject=%5B%EB%B2%84%EA%B7%B8%5D%20" data-sfx="go">메일 쓰기</a><button type="button" class="copy" data-copy="dalnaragames.official@gmail.com">주소 복사</button><span class="copy-msg" aria-live="polite"></span></div></article><article class="fb i"><h3>게임 의견 보내기</h3><p>바라는 것, 재미있던 것, 아쉬운 것을 보내 주세요.</p><div class="fb-row"><a class="seal-btn sm" href="mailto:dalnaragames.official@gmail.com?subject=%5B%EC%9D%98%EA%B2%AC%5D%20" data-sfx="go">메일 쓰기</a><button type="button" class="copy" data-copy="dalnaragames.official@gmail.com">주소 복사</button><span class="copy-msg" aria-live="polite"></span></div></article></div>
+  <p class="fb-mail"><span class="mail-a" data-copy-src>dalnaragames.official@gmail.com</span></p>
+  <div class="fb-more"><a class="flink" href="../contact.html?game=stoneskip&amp;lang=ko">게임을 골라 문의하기</a><span class="fb-sns">SNS 댓글로 남겨도 돼요. <a class="flink" href="https://www.threads.com/@dalnara_games" target="_blank" rel="noopener">쓰레드<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5l-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="vh"> (새 창)</span></a> <a class="flink" href="https://www.instagram.com/dalnara_games/" target="_blank" rel="noopener">인스타그램<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5l-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="vh"> (새 창)</span></a></span></div>
+</div></section>
+
+<section class="nextg"><div class="in">
+  <p class="k">다음 게임</p>
+  <a class="nextg-b" href="../delivery/" data-sfx="go"><span class="ng">계단의 전설</span><span class="blink" aria-hidden="true">▶</span></a>
+  <a class="seal-btn" href="../#games" data-sfx="go">게임 고르기로</a>
+</div></section>
+</main>
+<footer class="foot" id="foot">
+  <div class="in">
+    <p class="f-h">만드는 과정은 SNS에 다 올려요</p>
+    <nav class="f-sns" aria-label="SNS"><a class="sk" href="https://www.threads.com/@dalnara_games" target="_blank" rel="noopener" data-sfx="go"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v10H11l-4.5 4v-4H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 9.5h8M8 12.3h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="sn">쓰레드<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5l-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="vh"> (새 창)</span></a><a class="sk" href="https://www.instagram.com/dalnara_games/" target="_blank" rel="noopener" data-sfx="go"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 8h4l1.6-2.5h5.8L16.5 8h4v11h-17z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="13.2" r="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span class="sn">인스타그램<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5l-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="vh"> (새 창)</span></a><a class="sk" href="https://www.youtube.com/@dalnara_games" target="_blank" rel="noopener" data-sfx="go"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12.5" rx="1" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 8.3v5l4.3-2.5z" fill="currentColor"/><path d="M8 20h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="sn">유튜브<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5l-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="vh"> (새 창)</span></a></nav>
+    <nav class="f-links" aria-label="안내"><a class="flink" href="../privacy.html">개인정보처리방침</a><a class="flink" href="../terms.html">이용약관</a><a class="flink" href="../contact.html">문의</a><a class="flink" href="#bug">버그·의견</a></nav>
+    <p class="f-biz"><span>달나라 게임즈(Dalnara Games) · 운영 JKCOMMERCE(제이케이 커머스)</span><span>대표 김재경 · 사업자등록번호 874-32-01793</span><span>서울특별시 강동구 올림픽로 820, 4층 401-328호</span><span>© 2026 Dalnara Games</span></p>
+  </div>
+  <p class="f-big" aria-hidden="true"><span lang="ko">달나라 게임즈</span><img src="../assets/site/seal.webp" alt="" width="104" height="104" loading="lazy"></p>
+</footer>
+<script src="../assets/site/yt.js?v=f635e1bb"></script>
+<script src="../assets/site/site.js?v=f635e1bb"></script>
 </body>
 </html>

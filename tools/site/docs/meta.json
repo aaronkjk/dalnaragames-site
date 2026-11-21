@@ -1,0 +1,62 @@
+{
+ "ko/privacy": {
+  "title": "개인정보처리방침 · 달나라 게임즈",
+  "desc": "달나라 게임즈(Dalnara Games) 개인정보처리방침 · Privacy Policy",
+  "follow": false
+ },
+ "ko/terms": {
+  "title": "이용약관 · 달나라 게임즈",
+  "desc": "달나라 게임즈(Dalnara Games) 게임 이용약관 · Terms of Service",
+  "follow": false
+ },
+ "ko/contact": {
+  "title": "문의 · 달나라 게임즈",
+  "desc": "달나라 게임즈 게임 문의. 메일 주소와 적어 주면 좋은 것(게임 이름, 폰 기종, 화면 사진)을 모아 뒀어요.",
+  "follow": true
+ },
+ "ja/privacy": {
+  "title": "プライバシーポリシー · Dalnara Games",
+  "desc": "Dalnara Games プライバシーポリシー（日本語の参考訳）",
+  "follow": false
+ },
+ "ja/terms": {
+  "title": "利用規約 · Dalnara Games",
+  "desc": "Dalnara Games 利用規約（日本語の参考訳）",
+  "follow": false
+ },
+ "ja/contact": {
+  "title": "お問い合わせ · Dalnara Games",
+  "desc": "Dalnara Gamesのゲームについてのお問い合わせ。メールアドレスと、書いてほしいこと（ゲーム名、スマホの機種、画面の写真）をまとめました。",
+  "follow": true
+ },
+ "zh-TW/privacy": {
+  "title": "隱私權政策 · Dalnara Games",
+  "desc": "Dalnara Games 隱私權政策（繁體中文參考譯文）",
+  "follow": false
+ },
+ "zh-TW/terms": {
+  "title": "服務條款 · Dalnara Games",
+  "desc": "Dalnara Games 服務條款（繁體中文參考譯文）",
+  "follow": false
+ },
+ "zh-TW/contact": {
+  "title": "聯絡我們 · Dalnara Games",
+  "desc": "Dalnara Games 遊戲問題聯絡方式。信箱地址，以及希望你寫上的內容（遊戲名稱、手機型號、畫面截圖）。",
+  "follow": true
+ },
+ "en/privacy": {
+  "title": "Privacy Policy · Dalnara Games",
+  "desc": "Dalnara Games Privacy Policy (English reference translation)",
+  "follow": false
+ },
+ "en/terms": {
+  "title": "Terms of Service · Dalnara Games",
+  "desc": "Dalnara Games Terms of Service (English reference translation)",
+  "follow": false
+ },
+ "en/contact": {
+  "title": "Contact · Dalnara Games",
+  "desc": "Contact Dalnara Games about our games. Our email address and what to include (game name, phone model, screenshot).",
+  "follow": true
+ }
+}

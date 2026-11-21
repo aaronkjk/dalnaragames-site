@@ -1,0 +1,37 @@
+<div class="doc">
+    <h1>聯絡我們</h1>
+    <p class="when">遊戲的事或 bug，都可以寄信告訴我們。</p>
+  </div>
+  <article class="paper policy contact">
+      <p class="meta" id="for-game" hidden></p>
+      <p>玩遊戲時卡住了，或看到奇怪的地方，請寄信告訴我們。按下面的按鈕就會打開郵件 App。</p>
+      <p><a class="seal-btn" id="mail" href="mailto:dalnaragames.official@gmail.com?subject=Dalnara%20Games%20%E5%95%8F%E9%A1%8C%E5%9B%9E%E5%A0%B1">寫信</a></p>
+      <p class="mailaddr">dalnaragames.official@<wbr>gmail.com</p>
+      <h2>希望你一起寫上的內容</h2>
+      <ul class="dots">
+        <li>遊戲名稱</li>
+        <li>手機型號（例如 Galaxy S24、Pixel 8）。可以在手機的「設定」→「關於手機」裡看到</li>
+        <li>畫面截圖。看到奇怪的畫面時，請截圖附上</li>
+      </ul>
+      <p>發生了什麼事，寫一兩行就夠了。</p>
+      <h2>回信</h2>
+      <p>我們會盡快回信。遊戲是一個人做的，所以有時候可能會慢一點。</p>
+      <h2>想刪除每週排行榜紀錄時</h2>
+      <p>請寫上遊戲名稱、排行榜上顯示的名字、成績和是哪一週，我們會找到並刪除。</p>
+      <p class="fine">你寄來的信箱地址和內容只會用來回信，回信一年後就會刪除。詳細內容請看<a href="privacy.html">隱私權政策</a>。</p>
+  </article>
+<script>
+(function () {
+  var N = {"aquarium": "再釣一條就好", "stoneskip": "跳跳打水漂", "chicken": "樓梯傳說", "house": "小鬼退散", "wordsort": "낱말 서랍", "nonogram": "格子畫", "colorsort": "果凍調色盤"}, T = {"line": "關於《{g}》的問題", "subj": "[{g}] 問題回報", "subj0": "Dalnara Games 問題回報", "body": "遊戲：{g}\n手機型號：\n發生了什麼事：\n\n（有截圖的話，請一起附上）\n", "body0": "遊戲：\n手機型號：\n發生了什麼事：\n\n（有截圖的話，請一起附上）\n"};
+  var q = new URLSearchParams(location.search);
+  var g = String(q.get('game') || '').toLowerCase().replace(/^com\.dalnaragames\./, '');
+  if (!/^[a-z0-9_]{1,30}$/.test(g)) g = '';
+  var name = N[g] || '';
+  var label = name || g;
+  var subj = label ? T.subj.replace('{g}', label) : T.subj0;
+  var body = label ? T.body.replace('{g}', label) : T.body0;
+  var a = document.getElementById('mail');
+  if (a) a.href = 'mailto:dalnaragames.official@gmail.com?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
+  if (name) { var p = document.getElementById('for-game'); p.textContent = T.line.replace('{g}', name); p.hidden = false; }
+})();
+</script>
