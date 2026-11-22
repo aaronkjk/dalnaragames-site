@@ -164,9 +164,6 @@ main:has(.jump) #games { scroll-margin-top: 106px; }   /* 바로 가기 줄 바�
 .sk .ext { color: var(--mute); }
 @media (max-width: 360px) { .sk { padding: 9px 2px; } .sk .sn { font-size: .75rem; letter-spacing: -.01em; } .sk .ext { margin-left: .15em; } }
 @media (min-width: 520px) { .sk { flex-direction: row; gap: 8px; min-height: 52px; padding: 8px 12px; } }
-.down { display: flex; width: max-content; align-items: center; gap: 6px; margin: 12px auto 0; min-height: 44px; padding: 6px 10px; font: .78125rem var(--f-ui); color: var(--paper2); text-decoration: none; }
-.down svg { width: 12px; height: 14px; animation: bob 1.6s ease-in-out infinite; }
-@keyframes bob { 50% { transform: translateY(3px); } }
 @media (min-width: 900px) { .start .band { max-width: 760px; margin-left: auto; margin-right: auto; } .start .band::before { flex: 1 1 0; } .sns-k { max-width: 600px; margin-left: auto; margin-right: auto; } }
 .pond { position: relative; height: 170px; margin: 0 -16px; touch-action: pan-y; cursor: crosshair; outline: none;
   background: repeating-linear-gradient(180deg, transparent 0 13px, var(--pond-line) 13px 14px) 0 34px / 100% calc(100% - 34px) no-repeat var(--pond-bg); border-top: 1.5px solid var(--pond-top);
