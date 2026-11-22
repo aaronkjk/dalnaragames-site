@@ -117,7 +117,6 @@ main:has(.jump) #games { scroll-margin-top: 106px; }   /* 바로 가기 줄 바�
 @keyframes gmIn { from { transform: translateX(-24px); opacity: 0; } }
 .gm-g { margin-top: 22px; font: .75rem var(--f-ui); color: var(--mute); letter-spacing: .04em; }
 .gm-g + ol { margin-top: 2px; }
-.gm-tip { margin-top: 18px; font: .75rem var(--f-ui); color: var(--mute); }
 
 /* ── 화면 테두리(먹 선) ── */
 .screen, .pk-stage, .tv { position: relative; }
@@ -607,7 +606,6 @@ main:has(.jump) #games { scroll-margin-top: 106px; }   /* 바로 가기 줄 바�
 .jump.more-r .jump-more.r, .jump.more-l .jump-more.l { display: flex; }
 /* 메뉴: 아래 안전 영역(홈 막대) 여백 · 터치 기기는 키보드 안내 숨김 */
 .gmenu .gm-in { padding-bottom: calc(40px + env(safe-area-inset-bottom, 0px)); }
-@media (hover: none) and (pointer: coarse) { .gm-tip { display: none; } }
 /* 기록 줄: 넓고 높은 화면만 '내리면 옆으로'. 폰·낮은 화면은 손가락으로 옆으로 미는 줄(다음 칸이 반쯤 보임) */
 .hs-tip.t-scroll, .hs-tip.t-swipe { display: none; }
 .sdt .log.hs-on .hs-tip.t-scroll { display: flex; }
