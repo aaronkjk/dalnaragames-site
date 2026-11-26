@@ -3,7 +3,8 @@ import { gsap } from 'gsap';
 import Lenis from 'lenis';
 import { createSound } from './sound.js';
 
-run();
+// 쪽 머리에서 importmap을 아는 브라우저일 때만 이 파일을 불러 넣음(그래서 쪽을 다 읽기 전에 돌 수 있음) → 다 읽은 뒤에 시작
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run, { once: true }); else run();
 
 function run() {
   // 라이브러리가 늦게 와서 이미 그림 한 장으로 바뀌었으면 아무것도 안 함(쪽 머리의 4초 지킴이)
@@ -61,24 +62,24 @@ function run() {
   gsap.ticker.add(drawPre);
   if (document.fonts) document.fonts.ready.then(() => { if (FULL) load.target = Math.max(load.target, 0.35); });
 
-  // ── 소리 ──
+  // ── 소리 ── (켬·끔 기억은 다른 쪽과 같은 'dn-sound', 단추 글도 다른 쪽과 같은 '소리 켬·소리 끔')
   const snd = createSound(new URL('snd/', import.meta.url).href);   // 소리 파일은 이 파일 옆 snd/ 폴더
   window.__v2 = { sound: snd };   // 점검·기기 확인용
   const sBtn = $('#snd'), sTxt = $('.snd-t', sBtn);
-  let soundWanted = store.get('dn-v2-sound') === '1';
+  let soundWanted = store.get('dn-sound') === '1';
   function showSound(v, note) {
     sBtn.setAttribute('aria-pressed', v ? 'true' : 'false');
-    const label = note || (v ? '소리 끄기' : '소리 켜기');
+    const label = note || sBtn.getAttribute(v ? 'data-on' : 'data-off');
     sTxt.textContent = label; sBtn.setAttribute('aria-label', label);
   }
   function soundFail() {
-    soundWanted = false; store.set('dn-v2-sound', '0');
+    soundWanted = false; store.set('dn-sound', '0');
     showSound(false, '잠깐 안 불러와져요. 다시 눌러 볼까요?');
     setTimeout(() => { if (!soundWanted) showSound(false); }, 3500);
   }
   showSound(soundWanted);
   sBtn.addEventListener('click', () => {
-    soundWanted = !soundWanted; store.set('dn-v2-sound', soundWanted ? '1' : '0'); showSound(soundWanted);
+    soundWanted = !soundWanted; store.set('dn-sound', soundWanted ? '1' : '0'); showSound(soundWanted);
     snd.setOn(soundWanted).catch(soundFail);
   });
   if (soundWanted) {   // 켜 두셨으면 첫 누름에서 켬(브라우저가 누르기 전엔 소리를 막음)
@@ -113,13 +114,12 @@ function run() {
   onScroll(scrollY);
 
   // ── 달밤 호수 ──
-  const cvs = $('#gl'), still = $('#still');
+  const cvs = $('#gl');
   let hero = null, introDone = false, revealed = false, onScreen = true;
   const wantRun = () => hero && revealed && onScreen && !document.hidden;
   const sync = () => { if (!hero) return; wantRun() ? hero.start() : hero.stop(); };
   function fallback() {
-    D.classList.add('v2-still');
-    still.src = still.getAttribute(innerWidth / innerHeight < 0.8 ? 'data-src-tall' : 'data-src'); still.hidden = false;
+    window.__v2still();   // 쪽 머리에 있는 그림 한 장 모드(그림 넣기 · 물수제비 칸의 초점·안내 빼기). 소리 단추는 그대로(이 파일이 돌고 있으니까)
     if (hero) { const h = hero; hero = null; h.dispose(); }
     gsap.ticker.remove(drawPre);
     gsap.to(pre, { opacity: 0, duration: 0.45, delay: MIN / 1000, onComplete: () => pre.classList.add('gone') });

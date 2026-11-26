@@ -1,5 +1,5 @@
-/* 첫 화면 작은 단추 — 밝게·어둡게(다른 쪽과 같은 기억 'dn-mode') · 메일 주소 복사
- * 움직이는 그림(main.js)이 못 떠도 이 둘은 따로 움직임 */
+/* 첫 화면 작은 단추 — 밝게·어둡게(다른 쪽과 같은 기억 'dn-mode') · 언어 고르기 · 메일 주소 복사
+ * 움직이는 그림(main.js)이 못 떠도 이 셋은 따로 움직임 */
 (function () {
   'use strict';
   var root = document.documentElement;
@@ -21,6 +21,17 @@
   }
   paint(cur());
   btns.forEach(function (b) { b.addEventListener('click', function () { set(cur() === 'dark' ? 'light' : 'dark'); }); });
+
+  /* ── 언어 고르기: 다른 쪽과 같은 동작(단추로 열고, 바깥을 누르거나 Esc면 닫힘). 고른 언어 기억('dalnara-lang')·같은 창 이동은 lang.js ── */
+  [].slice.call(document.querySelectorAll('.lang')).forEach(function (lg) {
+    var b = lg.querySelector('.lang-b'), m = lg.querySelector('.lang-m');
+    if (!b || !m) return;
+    function set(open) { m.hidden = !open; b.setAttribute('aria-expanded', open ? 'true' : 'false'); lg.classList.toggle('open', open); }
+    b.addEventListener('click', function (e) { e.stopPropagation(); set(m.hidden); });
+    document.addEventListener('click', function (e) { if (!m.hidden && !lg.contains(e.target)) set(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !m.hidden) { set(false); b.focus(); } });
+    [].slice.call(m.querySelectorAll('[aria-current]')).forEach(function (x) { x.addEventListener('click', function () { set(false); }); });
+  });
 
   /* ── 머리 줄: 글자를 아주 크게 키운 좁은 화면에서 단추가 화면 밖으로 나가면 '게임' 단추를 숨기고 여백을 줄임(그래도 넘치면 로고도) ── */
   var bar = document.getElementById('bar'), raf = 0;

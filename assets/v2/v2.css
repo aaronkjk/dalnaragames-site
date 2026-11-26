@@ -50,8 +50,9 @@ a { color: inherit; }
 html:not(.js) #pre { display: none; }
 #pre.clear { background: transparent; }
 #pre.gone, .v2-still #pre { display: none; }
-/* 그림 한 장 모드(WebGL 없음·라이브러리 못 받음): 던지기 안내·점수·달 쪽지는 숨김 */
-.v2-still .hint, .v2-still .score, .v2-still .moon-cap, .v2-still #gl { display: none !important; }
+/* 그림 한 장 모드(WebGL 없음·라이브러리 못 받음·옛 브라우저): 던지기 안내·점수·달 쪽지는 숨김
+   움직이는 그림 파일(main.js)이 아예 못 돌면(v2-nosnd) 소리 단추도 숨김 — 눌러도 소리가 안 나서 */
+.v2-still .hint, .v2-still .score, .v2-still .moon-cap, .v2-still #gl, .v2-nosnd .bar .snd { display: none !important; }
 @keyframes pre-kill { to { visibility: hidden; } }
 .pre-moon { width: clamp(5.5rem, 15vmin, 8.5rem); height: auto; overflow: visible; }
 .pre-moon .ring { fill: none; stroke: var(--ink); stroke-width: 0.6; opacity: 0.35; }
@@ -91,6 +92,16 @@ html:not(.js) #pre { display: none; }
 .mode .i-moon, [data-mode="dark"] .mode .i-sun { display: none; }
 [data-mode="dark"] .mode .i-moon { display: inline; }
 .mode .i-moon path { fill: currentColor; stroke: none; }
+/* 언어 고르기: 다른 쪽과 같은 단추(지구 + KO)와 메뉴(같은 창으로 같은 쪽의 다른 언어). 판은 단추와 같은 한지·먹 */
+.lang { position: relative; }
+.lang-m {
+  position: absolute; right: 0; top: calc(100% + 0.5rem); z-index: 40; min-width: 9.5rem; padding: 0.375rem; display: grid; gap: 0.125rem;
+  background: var(--paper); color: var(--ink); border: 1.5px solid var(--ink); border-radius: 3px; box-shadow: 0 0.25rem 0 var(--ink);
+}
+.lang-m a { display: flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.375rem 0.75rem; border-radius: 2px; font-size: 0.9375rem; color: var(--ink); text-decoration: none; }
+.lang-m a:hover, .lang-m a:focus-visible { background: var(--paper-2); }
+.lang-m a[aria-current] { color: var(--seal-ink); font-weight: 600; }
+.lang-m a[aria-current]::before { content: ""; width: 0; height: 0; border-left: 0.4rem solid currentColor; border-top: 0.25rem solid transparent; border-bottom: 0.25rem solid transparent; }
 
 /* 글자를 아주 크게 키운 좁은 화면(page.js가 넘침을 재서 붙임): '게임' 단추를 숨기고 여백을 줄임, 그래도 넘치면 로고도 */
 .bar.tight { gap: 0.5rem; padding-left: max(0.75rem, env(safe-area-inset-left, 0px)); padding-right: max(0.75rem, env(safe-area-inset-right, 0px)); }
@@ -126,7 +137,8 @@ html:not(.js) #pre { display: none; }
 .en-1 { font-family: var(--serif); font-style: italic; font-size: clamp(1.75rem, 3.2vw, 3rem); line-height: 1.05; color: var(--on-ink); }
 .en-2 { font-family: var(--serif); font-size: clamp(1rem, 1.3vw, 1.25rem); color: var(--on-ink-2); }
 
-.hint { position: absolute; left: 50%; bottom: 2.5rem; transform: translateX(-50%); width: max-content; max-width: calc(100% - 2 * var(--gut)); margin: 0; display: flex; align-items: center; justify-content: center; gap: 0.6rem; font-size: 0.875rem; color: var(--on-ink); text-align: center; pointer-events: none; transition: opacity .5s; }
+/* 던지기 안내: 흰 물결 위에서도 읽히게 달 쪽지와 같은 평평한 먹 바탕 */
+.hint { position: absolute; left: 50%; bottom: 2.5rem; transform: translateX(-50%); width: max-content; max-width: calc(100% - 2 * var(--gut)); margin: 0; display: flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.35rem 0.75rem; font-size: 0.875rem; line-height: 1.5; color: var(--on-ink); background: var(--ink); border-radius: 2px; text-align: center; pointer-events: none; transition: opacity .5s; }
 .hint svg { width: 1.75rem; height: 0.875rem; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .hint.gone { opacity: 0; }
 
@@ -168,6 +180,8 @@ html:not(.js) #pre { display: none; }
 .foot { background: var(--ink); color: var(--on-ink); }
 [data-mode="dark"] .foot { border-top: 1px solid var(--sheet-line); }
 .f-wrap { max-width: 78rem; margin: 0 auto; padding: 3.5rem var(--gut-r) calc(3rem + env(safe-area-inset-bottom, 0px)) var(--gut-l); display: grid; gap: 2.5rem; }
+/* 다른 쪽 메뉴의 '버그·의견'(…/#bug)으로 오면 제목이 머리 줄(높이 약 4.25rem + 노치) 밑에 가리지 않게 */
+.f-bug { scroll-margin-top: calc(5.5rem + env(safe-area-inset-top, 0px)); }
 .f-bug h2 { margin: 0 0 1.25rem; font-family: var(--title); font-weight: 400; font-size: clamp(1.875rem, 4vw, 2.75rem); line-height: 1.15; display: flex; align-items: baseline; gap: 0.6rem; }
 .foot .num { color: #e0614b; }
 .f-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: 1rem; }
@@ -217,7 +231,9 @@ html:not(.js) #pre { display: none; }
   .no { font-size: 1.125rem; line-height: 2; }
 }
 /* 좁은 화면·글자를 크게 키운 화면(em이라 글자 크기를 따름): 소리 단추는 그림만 */
-@media (max-width: 30em) { .snd-t, .mode-t { display: none; } .snd, .mode { padding: 0; } }
+@media (max-width: 30em) { .snd-t, .mode-t { display: none; } .snd, .mode { padding: 0; } .bar-r { gap: 0.5rem; } .bar .go, .lang-b { padding: 0 0.7rem; } }
+/* 아주 좁은 폰(320px 등): 언어 단추가 들어온 만큼 '게임' 단추는 뺌(게임 목록이 첫 화면 바로 밑). 머리 줄 여백은 쪽 여백과 그대로 맞춤 */
+@media (max-width: 21em) { .bar .go { display: none; } }
 /* 가로로 눕힌 폰 */
 @media (max-height: 500px) and (orientation: landscape) {
   .hero { min-height: 22rem; }

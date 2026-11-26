@@ -31,7 +31,7 @@
 <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
 <link rel="preload" href="assets/site/fonts/title.woff2?v=c8116ea4" as="font" type="font/woff2" crossorigin>
 <style>@view-transition{navigation:auto}@font-face{font-family:'DN Title';font-weight:400;font-display:swap;src:url(assets/site/fonts/title.woff2?v=c8116ea4) format('woff2')}</style>
-<link rel="stylesheet" href="assets/v2/v2.css?v=0c8b0b2c">
+<link rel="stylesheet" href="assets/v2/v2.css?v=1e750290">
 <script>
   /* 이 브라우저에서 처음 오신 분만 1.5초 불러오기(다른 쪽과 같은 기억 dn-seen-site), 다음부터는 먹 번짐만. 주소에 ?intro를 붙이면 늘 처음부터
      밝게·어둡게도 다른 쪽과 같은 기억(dn-mode)을 그리기 전에 붙임 */
@@ -49,13 +49,21 @@
     addEventListener('unhandledrejection', function (e) { var r = e.reason; if (r && r.name === 'InvalidStateError' && /ransition/.test(r.message || '')) e.preventDefault(); });
     addEventListener('pageswap', function (e) { q(e.viewTransition); });
     addEventListener('pagereveal', function (e) { q(e.viewTransition); try { sessionStorage.removeItem('dn-vt'); } catch (x) {} });
-    /* 움직이는 그림 파일이 막히거나 4초 안에 안 오면 그림 한 장으로 바로 보여 줌 */
-    window.__v2wd = setTimeout(function () {
-      if (window.__v2ok) return;
-      window.__v2fallback = true; d.classList.add('v2-still');
-      var s = document.getElementById('still');
-      if (s) { s.src = s.getAttribute(innerWidth / innerHeight < 0.8 ? 'data-src-tall' : 'data-src'); s.hidden = false; }
-    }, 4000);
+    /* 그림 한 장 모드(그래픽 칩 없음·라이브러리 못 받음·옛 브라우저): 움직이는 물 대신 그림 한 장, 물수제비 칸은 초점·안내를 뺌(누를 것이 없으니까)
+       main.js가 아예 못 돌면(noSnd) 소리 단추도 숨김 — 눌러도 아무 소리가 안 나서 */
+    window.__v2still = function (noSnd) {
+      window.__v2fallback = true; d.classList.add('v2-still'); if (noSnd) d.classList.add('v2-nosnd');
+      function dom() {
+        var s = document.getElementById('still'), p = document.getElementById('lake');
+        if (s && s.hidden) { s.src = s.getAttribute(innerWidth / innerHeight < 0.8 ? 'data-src-tall' : 'data-src'); s.hidden = false; }
+        if (p) { ['tabindex', 'role', 'aria-roledescription', 'aria-label'].forEach(function (k) { p.removeAttribute(k); }); p.setAttribute('aria-hidden', 'true'); if (document.activeElement === p) p.blur(); }
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', dom); else dom();
+    };
+    /* importmap을 모르는 브라우저(옛 사파리 등)는 기다리지 않고 바로 그림 한 장. 아는 브라우저도 움직이는 그림 파일이 막히거나 4초 안에 안 오면 그림 한 장 */
+    window.__v2im = !!(window.HTMLScriptElement && HTMLScriptElement.supports && HTMLScriptElement.supports('importmap'));
+    if (!window.__v2im) window.__v2still(true);
+    else window.__v2wd = setTimeout(function () { if (!window.__v2ok) window.__v2still(true); }, 4000);
   })();
 </script>
 <script type="importmap">
@@ -65,8 +73,11 @@
   "lenis": "./assets/v2/lib/lenis.js"
 } }
 </script>
-<script type="module" src="assets/v2/main.js?v=0c8b0b2c"></script>
-<script src="assets/v2/page.js?v=0c8b0b2c" defer></script>
+<script>
+  /* 움직이는 그림(main.js)은 importmap을 아는 브라우저에서만 부름(모르는 곳에서 부르면 'gsap'을 못 찾는 오류가 남). 쪽을 다 읽은 뒤에 돌게 main.js가 기다림 */
+  (function () { if (!window.__v2im) return; var s = document.createElement('script'); s.type = 'module'; s.src = 'assets/v2/main.js?v=1e750290'; document.head.appendChild(s); })();
+</script>
+<script src="assets/v2/page.js?v=1e750290" defer></script>
 </head>
 <body>
 <a class="skip" href="#games-h">게임 목록으로 건너뛰기</a>
@@ -84,15 +95,16 @@
   </a>
   <div class="bar-r">
     <a class="key go" href="#games-h" data-go="#games-h">게임</a>
-    <button class="key snd" type="button" data-sound aria-pressed="false" aria-label="소리 켜기" id="snd">
+    <button class="key snd" type="button" data-sound aria-pressed="false" data-on="소리 켬" data-off="소리 끔" aria-label="소리 끔" id="snd">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path class="spk" d="M4 9.5h3.2L12 5.5v13l-4.8-4H4z"/><path class="w1" d="M15.2 9.2a4 4 0 0 1 0 5.6"/><path class="w2" d="M17.8 6.8a7.4 7.4 0 0 1 0 10.4"/><path class="x" d="M16 9.5l5 5M21 9.5l-5 5"/></svg>
-      <span class="snd-t" aria-hidden="true">소리 켜기</span>
+      <span class="snd-t" aria-hidden="true">소리 끔</span>
     </button>
     <button class="key mode" type="button" data-mode-toggle aria-pressed="false" data-light="밝게" data-dark="어둡게" data-aria="화면 밝기" aria-label="화면 밝기: 밝게">
       <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.6"/><path d="M12 3.2v2.4M12 18.4v2.4M3.2 12h2.4M18.4 12h2.4M5.8 5.8l1.7 1.7M16.5 16.5l1.7 1.7M5.8 18.2l1.7-1.7M16.5 7.5l1.7-1.7"/></svg>
       <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.2 14.6A7.6 7.6 0 0 1 9.4 4.8a7.6 7.6 0 1 0 9.8 9.8z"/></svg>
       <span class="mode-t">밝게</span>
     </button>
+    <div class="lang"><button type="button" class="key lang-b" aria-expanded="false" aria-controls="langm" aria-label="언어: 한국어"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></g></svg><span>KO</span></button><div class="lang-m" id="langm" hidden><a href="./" hreflang="ko" lang="ko" data-setlang="ko" aria-current="true">한국어</a><a href="ja/" hreflang="ja" lang="ja" data-setlang="ja">日本語</a><a href="zh-TW/" hreflang="zh-TW" lang="zh-TW" data-setlang="zh-TW">繁體中文</a><a href="en/" hreflang="en" lang="en" data-setlang="en">English</a></div></div>
   </div>
 </header>
 

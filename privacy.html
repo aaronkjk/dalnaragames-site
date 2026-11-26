@@ -67,7 +67,7 @@ addEventListener('pagereveal',function(e){q(e.viewTransition);try{var p=JSON.par
       <div class="tablewrap"><table>
         <tr><th>구분</th><th>항목</th><th>처리 방식</th></tr>
         <tr><td>게임 진행 정보</td><td>코인, 장비, 도감, 수족관, 설정 등</td><td>이용자의 기기 안에만 저장되며 회사 서버로 보내지 않습니다(아래 주간 랭킹 점수는 제외).</td></tr>
-        <tr><td>운동 기록과 몸 정보<br>(「빡핏」)</td><td>운동 기록(날짜·동작·무게·횟수·세트), 다른 운동 기록(WOD·그룹 수업·레이스), 설정, 이용자가 입력한 몸 정보(성별·나이·키·몸무게·골격근량·체지방량·기초대사량)</td><td>이용자의 기기 안 앱 전용 저장 공간에만 저장되며 회사 서버로 보내지 않습니다. 회사는 이 정보를 받거나 볼 수 없습니다. 기기의 Android 자동 백업이 켜져 있으면 이 기록 파일이 이용자 본인의 Google 계정 백업에 저장되며, 이는 Google이 이용자 계정 설정에 따라 처리합니다. '기록 내보내기'로 만든 파일은 이용자가 공유 창에서 고른 곳으로만 보내집니다.</td></tr>
+        <tr><td>운동 기록과 몸 정보<br>(「빡핏」)</td><td>운동 기록(날짜·동작·무게·횟수·세트), 다른 운동 기록(WOD·그룹 수업·레이스), 설정, 이용자가 입력한 몸 정보(성별·나이·키·몸무게·활동량·목적(근비대·체지방 감량·유지)·골격근량·체지방량·기초대사량)</td><td>이용자의 기기 안 앱 전용 저장 공간에만 저장되며 회사 서버로 보내지 않습니다. 회사는 이 정보를 받거나 볼 수 없습니다. 기기의 Android 자동 백업이 켜져 있으면 이 기록 파일이 이용자 본인의 Google 계정 백업에 저장되며, 이는 Google이 이용자 계정 설정에 따라 처리합니다. '기록 내보내기'로 만든 파일은 이용자가 공유 창에서 고른 곳으로만 보내집니다.</td></tr>
         <tr><td>사진<br>(「빡핏」 오운완 카드)</td><td>이용자가 카드에 넣으려고 고르거나 찍은 사진</td><td>카드를 그리는 동안 기기 안에서만 쓰며 앱에 저장하지 않고 백업하지 않습니다. 카드는 이용자가 공유 창에서 고른 앱으로만 보내집니다.</td></tr>
         <tr><td>주간 랭킹<br>(「통통 물수제비」·「계단의 전설」·「잡귀야 물러가라」)</td><td>익명 식별 번호(Google Firebase 익명 로그인으로 자동 생성), 낱말 조합 이름(게임이 정해 둔 낱말을 무작위로 붙인 이름이며 이용자가 직접 입력하지 않음), 점수(그 주의 최고 기록), 기록 시각, 앱 버전</td><td>인터넷에 연결되어 있을 때 그 주의 최고 기록이 오르면 Google Firebase 서버로 전송·저장되며, 순위표에서 다른 이용자에게 이름과 점수가 공개됩니다. 기기에는 익명 식별 번호, 로그인 유지 정보, 이름, 이번 주 기록이 저장됩니다.</td></tr>
         <tr><td>광고</td><td>광고 식별자(Advertising ID), 기기 정보, IP 주소, 광고 이용 기록</td><td>광고를 보여주고 보상을 지급하기 위해 Google AdMob이 수집·처리합니다.</td></tr>
@@ -121,10 +121,10 @@ addEventListener('pagereveal',function(e){q(e.viewTransition);try{var p=JSON.par
       <p>안드로이드 기기 설정에서 광고 ID를 재설정하거나 삭제할 수 있습니다(설정 → Google → 광고 등, 기기마다 메뉴 이름이 조금 다를 수 있습니다). 유럽 경제 지역·영국 등 동의가 필요한 지역에서는 처음 실행할 때 광고 동의 여부를 묻고, 동의하지 않으면 맞춤형이 아닌 광고만 보여 드립니다.</p>
 
       <h2>6. 아동의 개인정보</h2>
-      <p>회사의 게임은 만 14세 미만 아동을 주 이용자로 하지 않으며, 아동의 개인정보를 일부러 수집하지 않습니다. 아동의 정보가 수집된 사실을 알게 되면 바로 삭제합니다.</p>
+      <p>회사의 게임과 앱(「빡핏」 포함)은 만 14세 미만 아동을 주 이용자로 하지 않으며, 아동의 개인정보를 일부러 수집하지 않습니다. 아동의 정보가 수집된 사실을 알게 되면 바로 삭제합니다.</p>
 
       <h2>7. 이용자의 권리</h2>
-      <p>이용자는 언제든지 자신의 개인정보를 열람·정정·삭제하거나 처리 정지를 요청할 수 있습니다. 아래 이메일로 요청하시면 지체 없이 처리합니다. 기기에 저장된 게임 정보는 앱 삭제로 직접 지울 수 있습니다. 주간 랭킹 기록의 삭제를 요청할 때는 게임 이름과 순위표에 보이는 이름, 기록, 해당 주를 알려 주시면 그 기록을 찾아 지웁니다.</p>
+      <p>이용자는 언제든지 자신의 개인정보를 열람·정정·삭제하거나 처리 정지를 요청할 수 있습니다. 아래 이메일로 요청하시면 지체 없이 처리합니다. 기기에 저장된 게임 정보와 「빡핏」의 운동 기록·몸 정보는 앱 삭제로 직접 지울 수 있으며, 「빡핏」은 앱 안 '모두 지우기'와 '몸 정보 지우기'로도 지울 수 있습니다. 주간 랭킹 기록의 삭제를 요청할 때는 게임 이름과 순위표에 보이는 이름, 기록, 해당 주를 알려 주시면 그 기록을 찾아 지웁니다.</p>
 
       <h2>8. 안전하게 지키기 위한 조치</h2>
       <p>필요한 정보만 최소한으로 다루고, 문의 이메일은 접근 권한을 제한한 계정에서만 관리합니다.</p>
@@ -141,7 +141,13 @@ addEventListener('pagereveal',function(e){q(e.viewTransition);try{var p=JSON.par
       <h2>10. 방침의 변경</h2>
       <p>이 방침이 바뀌면 시행 7일 전부터 이 페이지에 알립니다. 새로운 분석 도구 등을 추가하는 경우에도 이 방침을 먼저 고칩니다.</p>
       <p>공고일: 2026년 11월 26일 · 시행일: 2026년 12월 3일</p>
-      <p>변경 내용: 운동 기록 앱 「빡핏」 적용(들어가며, 1~3번). 이전 방침(2026년 11월 22일 공고, 11월 29일 시행)은 유튜브 API 서비스 이용 항목(4-1번)을 추가한 것이고, 그 전 방침(2026년 11월 21일 시행)은 주간 랭킹(「통통 물수제비」·「계단의 전설」·「잡귀야 물러가라」) 항목을 추가한 것이며, 처음 방침은 2026년 11월 4일부터 시행되었습니다.</p>
+      <p>변경 내용과 항목별 시행일</p>
+      <ul>
+        <li>운동 기록 앱 「빡핏」 적용(들어가며, 1~3번, 6·7번): 2026년 11월 26일 공고, 2026년 12월 3일부터 시행</li>
+        <li>유튜브 API 서비스 이용(4-1번): 2026년 11월 22일 공고, 공고한 대로 2026년 11월 29일부터 시행(이번 공고로 미뤄지지 않음)</li>
+        <li>주간 랭킹(「통통 물수제비」·「계단의 전설」·「잡귀야 물러가라」) 항목: 2026년 11월 21일부터 시행</li>
+        <li>처음 방침: 2026년 11월 4일부터 시행</li>
+      </ul>
     </article>
   <article id="en" class="paper policy" style="margin-top:22px">
       
@@ -151,7 +157,7 @@ addEventListener('pagereveal',function(e){q(e.viewTransition);try{var p=JSON.par
       <h2>1. Information we process</h2>
       <ul>
         <li><strong>Game progress</strong> (coins, gear, collection, aquarium, settings) is stored only on your device and is not sent to our servers, except for weekly ranking scores below.</li>
-        <li><strong>Workout records and body data (BBAKFIT):</strong> your workout history (date, exercise, weight, reps, sets), other workout records (WODs, group classes, races), settings and the body measurements you enter (sex, age, height, weight, skeletal muscle mass, body fat mass, basal metabolic rate) are stored only in the app's private storage on your device and are never sent to us; we cannot receive or see them. If Android Auto Backup is on, this file is backed up to your own Google account under your Google settings. A file made with Export log goes only where you choose in the share sheet.</li>
+        <li><strong>Workout records and body data (BBAKFIT):</strong> your workout history (date, exercise, weight, reps, sets), other workout records (WODs, group classes, races), settings and the body measurements you enter (sex, age, height, weight, activity level, goal (muscle gain, fat loss or maintain), skeletal muscle mass, body fat mass, basal metabolic rate) are stored only in the app's private storage on your device and are never sent to us; we cannot receive or see them. If Android Auto Backup is on, this file is backed up to your own Google account under your Google settings. A file made with Export log goes only where you choose in the share sheet.</li>
         <li><strong>Photos on a workout card (BBAKFIT):</strong> a photo you pick or take for the card is used on the device only while the card is drawn; the app does not store it or back it up. The card is sent only to the app you choose in the share sheet.</li>
         <li><strong>Weekly ranking</strong> (Bouncy Skip, 계단의 전설, 잡귀야 물러가라): an anonymous ID created automatically by Google Firebase anonymous sign-in, a name made by randomly combining words chosen by the game (you do not type it), your best score of the week, the time it was recorded and the app version. When you are online and beat your best of the week, this is sent to Google Firebase and your name and score are shown to other players on the ranking. Your device stores the anonymous ID, sign-in data, name and this week's score.</li>
         <li><strong>Advertising:</strong> Google AdMob may collect your advertising ID, device information, IP address and ad interaction data to show ads, grant rewards for watched ads, and measure ad performance.</li>
@@ -183,16 +189,16 @@ addEventListener('pagereveal',function(e){q(e.viewTransition);try{var p=JSON.par
       <p>You can reset or delete your advertising ID in your Android device settings. Where consent is required (for example, the EEA and the UK), we ask for your consent on first launch; if you decline, you will only see non-personalized ads.</p>
 
       <h2>6. Children</h2>
-      <p>Our games are not directed to children under 13 (under 14 in Korea), and we do not knowingly collect their personal information. If we learn that we have, we will delete it promptly.</p>
+      <p>Our games and apps (including BBAKFIT) are not directed to children under 13 (under 14 in Korea), and we do not knowingly collect their personal information. If we learn that we have, we will delete it promptly.</p>
 
       <h2>7. Your rights</h2>
-      <p>You may request access to, correction or deletion of, or a halt to the processing of your personal information at any time by emailing us. You can delete on-device game data yourself by uninstalling the app. To delete a weekly ranking record, tell us the game, the name and score shown on the ranking, and the week.</p>
+      <p>You may request access to, correction or deletion of, or a halt to the processing of your personal information at any time by emailing us. You can delete on-device game data and BBAKFIT workout records and body data yourself by uninstalling the app; in BBAKFIT you can also use Delete everything or Delete body info. To delete a weekly ranking record, tell us the game, the name and score shown on the ranking, and the week.</p>
 
       <h2>8. Contact</h2>
       <p>Privacy officer: Jae Kyung Kim · <a href="mailto:dalnaragames.official@gmail.com">dalnaragames.official@gmail.com</a><br>JKCOMMERCE, Room 401-328, 4F, 820 Olympic-ro, Gangdong-gu, Seoul, Republic of Korea</p>
 
       <h2>9. Changes</h2>
-      <p>We will post any changes on this page at least 7 days before they take effect. Posted: November 26, 2026 · Effective date: December 3, 2026 (BBAKFIT added to the Introduction and sections 1 to 3). The previous version, posted November 22, 2026, took effect on November 29, 2026 (added section 4-1, use of YouTube API Services); the one before took effect on November 21, 2026 (added the weekly ranking); the first took effect on November 4, 2026.</p>
+      <p>We will post any changes on this page at least 7 days before they take effect. What changed and when each part takes effect: BBAKFIT added to the Introduction and sections 1 to 3, 6 and 7 (posted November 26, 2026; takes effect December 3, 2026). Section 4-1, use of YouTube API Services (posted November 22, 2026), takes effect on November 29, 2026 as announced; this change does not delay it. The weekly ranking took effect on November 21, 2026, and the first version on November 4, 2026.</p>
     </article>
 </div>
 </main>
