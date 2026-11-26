@@ -175,6 +175,9 @@ html:not(.js) #pre { display: none; }
 .st { grid-area: st; align-self: center; font-size: 0.8125rem; font-weight: 600; color: var(--sheet-ink-2); white-space: nowrap; display: inline-flex; align-items: center; gap: 0.4rem; }
 .st.t { color: var(--sheet-red); }
 .st.t::before { content: ""; width: 0.5rem; height: 0.5rem; background: var(--seal); display: inline-block; }
+/* 정식 출시(2026-11-26 통통 물수제비부터): 진한 글 + 둥근 도장 점 — 비공개 테스트(네모 점)와 구별 */
+.st.l { color: var(--sheet-ink); }
+.st.l::before { content: ""; width: 0.5rem; height: 0.5rem; background: var(--seal); border-radius: 50%; display: inline-block; }
 
 /* ── 맺음(버그·의견 · SNS · 언어 · 안내 · 사업자 정보) ── */
 .foot { background: var(--ink); color: var(--on-ink); }

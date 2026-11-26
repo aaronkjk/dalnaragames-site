@@ -287,6 +287,7 @@ main:has(.jump) #games { scroll-margin-top: 106px; }   /* 바로 가기 줄 바�
 .up-w { align-self: flex-start; font: .78125rem/1 var(--f-ui); color: var(--on-red); background: var(--red); padding: 5px 7px; border-radius: 2px; }
 .up h3 { font: 700 1rem/1.35 var(--f-body); margin-top: 6px; }
 .up-v { font: 2.5rem/1 var(--f-ui); color: var(--paper); font-variant-numeric: tabular-nums; }
+.up-v.t { font: 700 1.5rem/1.25 var(--f-body); }   /* 판 번호 대신 '정식 출시' 같은 글(2026-11-26) */
 .up ul { display: grid; gap: 4px; margin-top: 4px; }
 .up li { font-size: .90625rem; color: var(--paper2); padding-left: 14px; position: relative; }
 .up li::before { content: "▸"; position: absolute; left: 0; color: var(--red-t); }
@@ -530,6 +531,8 @@ main:has(.jump) #games { scroll-margin-top: 106px; }   /* 바로 가기 줄 바�
 .gh-tail { font: .875rem/1.4 var(--f-ui); color: var(--paper2); margin: -8px 0 12px; }
 .gh-note { font: .9375rem/1.5 var(--f-ui); color: var(--paper2); border-left: 3px solid var(--red); padding-left: 8px; }
 .gh-soon { margin-top: 14px; font-size: .90625rem; color: var(--paper2); max-width: 760px; }
+.gh-get { margin-top: 18px; }   /* 정식 출시 게임: 구글 플레이 받기 단추(2026-11-26) */
+.pk-st.st-live i { border-radius: 50%; }
 .about, .how { padding: 40px 0; border-top: 1px solid var(--line); }
 .about-t { display: grid; gap: 12px; max-width: 760px; font-size: 1.03125rem; }
 .about-t p:last-child { color: var(--paper2); font-size: .9375rem; }
